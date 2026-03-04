@@ -20,10 +20,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close sidebar on route change (e.g. browser back/forward)
+  useEffect(() => {
+    setSidebarOpen(false)
+  }, [pathname])
+
   // Prevent body scroll when sidebar open
   useEffect(() => {
-    document.body.style.overflow = sidebarOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    document.body.style.overflowY = sidebarOpen ? 'hidden' : ''
+    return () => { document.body.style.overflowY = '' }
   }, [sidebarOpen])
 
   const navLinks = [
@@ -73,6 +78,7 @@ export default function Header() {
           <>
             <motion.div
               className="offcanvas__overlay"
+              style={{ visibility: 'visible' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

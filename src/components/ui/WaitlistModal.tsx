@@ -23,8 +23,8 @@ export default function WaitlistModal({ open, onClose }: Props) {
 
   // Body scroll lock
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    document.body.style.overflowY = open ? 'hidden' : ''
+    return () => { document.body.style.overflowY = '' }
   }, [open])
 
   // Reset form when modal closes

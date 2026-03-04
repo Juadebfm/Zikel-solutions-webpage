@@ -104,6 +104,7 @@ export default function Preloader() {
         style={{
           position: 'fixed', inset: 0,
           zIndex: 10000000,
+          pointerEvents: 'none',
           backgroundImage: 'url(/assets/img/home-1/hero/hero-bg.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
