@@ -36,8 +36,8 @@ const INFO_CARDS = [
     title: 'Contact Us',
     body: (
       <p>
-        <a className="d-block" href="tel:+86661233562">Mobile: +8 666 123-3562</a>
-        <a href="mailto:info@zikel.com">info@zikel.com</a>
+        <a className="d-block" href="tel:+2348032819367">Mobile: +234 803 281 9367</a>
+        <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>
       </p>
     ),
     delay: 0.5,

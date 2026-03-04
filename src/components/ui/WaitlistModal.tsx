@@ -47,7 +47,7 @@ export default function WaitlistModal({ open, onClose }: Props) {
       }
     } catch {
       setStatus('error')
-      setStatusMessage('Unable to submit. Please email us at hello@zikel.com')
+      setStatusMessage('Unable to submit. Please email us at contact@zikelsolutions.com')
     }
   }
 

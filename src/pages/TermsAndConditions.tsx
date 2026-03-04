@@ -218,7 +218,7 @@ export default function TermsAndConditions() {
                 <p>
                   For any questions regarding these Terms, please contact:<br />
                   <strong>Zikel Solutions</strong><br />
-                  Email: <a href="mailto:hello@zikel.com">hello@zikel.com</a><br />
+                  Email: <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a><br />
                   Hours: Monday–Friday, 09:00 AM – 06:00 PM
                 </p>
               </FadeSection>

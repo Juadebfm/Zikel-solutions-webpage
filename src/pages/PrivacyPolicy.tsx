@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
                   Zikel Solutions ("we", "us", "our") is a software company registered in England and
                   Wales. We provide AI-enabled software platforms for children's residential homes,
                   healthcare organisations, and corporate teams. Our registered address and data
-                  controller contact is: <a href="mailto:hello@zikel.com">hello@zikel.com</a>.
+                  controller contact is: <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>.
                 </p>
                 <p>
                   We are committed to protecting the privacy and security of all personal data we
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
                 </ul>
                 <p>
                   To exercise any of these rights, please contact us at{' '}
-                  <a href="mailto:hello@zikel.com">hello@zikel.com</a>. We will respond within 30
+                  <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>. We will respond within 30
                   days. If you are dissatisfied with our response, you have the right to lodge a
                   complaint with the Information Commissioner's Office (ICO) at{' '}
                   <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a>.
@@ -183,7 +183,7 @@ export default function PrivacyPolicy() {
                 <p>
                   For any privacy-related queries, please contact us at:<br />
                   <strong>Zikel Solutions</strong><br />
-                  Email: <a href="mailto:hello@zikel.com">hello@zikel.com</a><br />
+                  Email: <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a><br />
                   Hours: Monday–Friday, 09:00 AM – 06:00 PM
                 </p>
               </FadeSection>

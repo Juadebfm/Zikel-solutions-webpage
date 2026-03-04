@@ -131,8 +131,8 @@ export default function Footer() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
                 { icon: 'fa-location-dot', text: 'Riverside Park EU-1001' },
-                { icon: 'fa-envelope', text: 'hello@zikel.com', href: 'mailto:hello@zikel.com' },
-                { icon: 'fa-phone', text: '+(528) 456-7592', href: 'tel:+5284567592' },
+                { icon: 'fa-envelope', text: 'contact@zikelsolutions.com', href: 'mailto:contact@zikelsolutions.com' },
+                { icon: 'fa-phone', text: '+234 803 281 9367', href: 'tel:+2348032819367' },
                 { icon: 'fa-clock', text: 'Mon–Fri, 09:00 AM – 06:00 PM' },
               ].map(({ icon, text, href }) => (
                 <li key={icon} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', marginBottom: '18px' }}>

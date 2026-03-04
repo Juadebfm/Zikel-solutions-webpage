@@ -48,7 +48,7 @@ export default function Header() {
                 <li>।</li>
                 <li>
                   <i className="fa-regular fa-envelope"></i>
-                  <a href="mailto:hello@zikel.com">hello@zikel.com</a>
+                  <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>
                 </li>
               </ul>
             </div>
@@ -135,7 +135,7 @@ export default function Header() {
                             <i className="fal fa-envelope"></i>
                           </div>
                           <div className="offcanvas__contact-text">
-                            <a href="mailto:info@zikel.com">info@zikel.com</a>
+                            <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>
                           </div>
                         </li>
                         <li className="d-flex align-items-center">
@@ -151,7 +151,7 @@ export default function Header() {
                             <i className="far fa-phone"></i>
                           </div>
                           <div className="offcanvas__contact-text">
-                            <a href="tel:+5284567592">+(528) 456-7592</a>
+                            <a href="tel:+2348032819367">+234 803 281 9367</a>
                           </div>
                         </li>
                       </ul>
@@ -208,7 +208,7 @@ export default function Header() {
                 <div className="header-btn">
                   <h6>
                     <i className="fa-regular fa-phone-volume"></i>
-                    <a href="tel:+5284567592">+(528) 456-7592</a>
+                    <a href="tel:+2348032819367">+234 803 281 9367</a>
                   </h6>
                   <button
                     onClick={() => setWaitlistOpen(true)}

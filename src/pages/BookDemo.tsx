@@ -36,7 +36,7 @@ export default function BookDemo() {
       }
     } catch {
       setStatus('error')
-      setStatusMessage('Unable to send your request. Please try again or email us at hello@zikel.com')
+      setStatusMessage('Unable to send your request. Please try again or email us at contact@zikelsolutions.com')
     }
   }
 
@@ -102,8 +102,8 @@ export default function BookDemo() {
                   <p style={{ margin: 0, fontSize: '14px', color: 'var(--text)', lineHeight: '22px' }}>
                     <strong style={{ display: 'block', marginBottom: '6px', color: 'var(--header)' }}>Prefer to talk first?</strong>
                     Email us at{' '}
-                    <a href="mailto:hello@zikel.com" style={{ color: 'var(--theme)' }}>hello@zikel.com</a>
-                    {' '}or call <a href="tel:+5284567592" style={{ color: 'var(--theme)' }}>+(528) 456-7592</a>
+                    <a href="mailto:contact@zikelsolutions.com" style={{ color: 'var(--theme)' }}>contact@zikelsolutions.com</a>
+                    {' '}or call <a href="tel:+2348032819367" style={{ color: 'var(--theme)' }}>+234 803 281 9367</a>
                     <br />Mon–Fri, 09:00 AM – 06:00 PM
                   </p>
                 </div>
