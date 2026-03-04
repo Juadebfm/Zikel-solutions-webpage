@@ -47,8 +47,8 @@ export default function Header() {
             <div className="header-left">
               <ul className="list">
                 <li>
-                  <i className="fa-solid fa-location-dot"></i>
-                  Riverside Park EU-1001
+                  <i className="fa-solid fa-phone"></i>
+                  <a href="tel:+2348032819367">+234 803 281 9367</a>
                 </li>
                 <li>।</li>
                 <li>

@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import WaitlistModal from '../components/ui/WaitlistModal'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
@@ -54,7 +55,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      '"As a startup, we required a development partner who could help us build a scalable AI-driven diagnostics tool. Their team exceeded every expectation—clear communication, deep technical knowledge, and a strategic approach to product design. Thanks to them, we launched on schedule and with immense confidence."',
+      '"As a startup, we required a development partner who could help us build a scalable AI-driven diagnostics tool. Their team exceeded every expectation: clear communication, deep technical knowledge, and a strategic approach to product design. Thanks to them, we launched on schedule and with immense confidence."',
     name: 'Jane Roberts',
     org: 'CEO, VitalCheck AI',
   },
@@ -63,11 +64,11 @@ const TESTIMONIALS = [
 const DIFFERENCE_ITEMS = [
   {
     title: 'Purpose-Built for Real-World Challenges',
-    body: "We understand the daily pressures faced by children's homes, healthcare institutions, and corporate teams. Our solutions address real operational gaps—not theoretical ones.",
+    body: "We understand the daily pressures faced by children's homes, healthcare institutions, and corporate teams. Our solutions address real operational gaps, not theoretical ones.",
   },
   {
     title: 'AI With Integrity',
-    body: 'Our AI empowers staff. It does not replace human judgment. It highlights training gaps, supervision needs, and workflow inconsistencies—supporting staff growth.',
+    body: 'Our AI empowers staff. It does not replace human judgment. It highlights training gaps, supervision needs, and workflow inconsistencies, supporting staff growth.',
   },
   {
     title: 'User-Centered Design',
@@ -80,6 +81,7 @@ const DIFFERENCE_ITEMS = [
 ]
 
 export default function Home() {
+  const [waitlistOpen, setWaitlistOpen] = useState(false)
   const [diffOpen, setDiffOpen] = useState<number | null>(0)
   const [faqOpen, setFaqOpen] = useState<number | null>(0)
   const serviceSwiperRef = useRef<SwiperType | null>(null)
@@ -89,6 +91,7 @@ export default function Home() {
   const toggleFaq = (i: number) => setFaqOpen(faqOpen === i ? null : i)
 
   return (
+    <>
     <main>
       {/* Hero Section */}
       <section
@@ -104,12 +107,12 @@ export default function Home() {
                 </h1>
                 <p>
                   AI-enabled software for children's homes, healthcare institutions, and corporate
-                  teams — built to strengthen accountability, staff performance, and care standards.
+                  teams, built to strengthen accountability, staff performance, and care standards.
                 </p>
                 <div className="hero-btn">
-                  <Link to="/consultation" className="theme-btn">
-                    Get a Free Consultation <i className="fa-solid fa-arrow-up-right"></i>
-                  </Link>
+                  <button className="theme-btn" onClick={() => setWaitlistOpen(true)}>
+                    Join Waitlist <i className="fa-solid fa-arrow-up-right"></i>
+                  </button>
                   <Link to="/services" className="theme-btn style-2">
                     Explore Our Services <i className="fa-solid fa-arrow-up-right"></i>
                   </Link>
@@ -158,7 +161,7 @@ export default function Home() {
                         <p>
                           We design purpose-driven software solutions that help organizations work
                           smarter, faster, and more efficiently. Our journey began with a digital
-                          filing cabinet built specifically for children's homes—simplifying
+                          filing cabinet built specifically for children's homes, simplifying
                           record-keeping, compliance, and child safeguarding processes.
                         </p>
                       </FadeSection>
@@ -268,8 +271,8 @@ export default function Home() {
             </div>
             <FadeSection delay={0.2}>
               <p>
-                Our AI tracks staff activity footprints—daily logs, documentation patterns, workflow
-                behavior—and then intelligently:
+                Our AI tracks staff activity footprints (daily logs, documentation patterns, workflow
+                behavior) and then intelligently:
               </p>
             </FadeSection>
           </div>
@@ -282,8 +285,8 @@ export default function Home() {
                   </div>
                   <div className="content">
                     <p className="mb-3">
-                      Our AI tracks staff activity footprints — daily logs, documentation patterns,
-                      incident records, and workflow behaviour — and then intelligently:
+                      Our AI tracks staff activity footprints (daily logs, documentation patterns,
+                      incident records, and workflow behaviour) and then intelligently:
                     </p>
                     <ul className="text-start content" style={{ listStyleType: 'decimal', marginLeft: '20px', marginBottom: '20px' }}>
                       <li className="ps-3">Generates one-click Reg 44 &amp; Reg 45 evidence packs</li>
@@ -296,7 +299,7 @@ export default function Home() {
                     </ul>
                     <p>
                       This is not just software.<br />
-                      <strong>It is organisational intelligence — built for the children's homes sector, grounded in therapeutic values.</strong>
+                      <strong>It is organisational intelligence, built for the children's homes sector, grounded in therapeutic values.</strong>
                     </p>
                   </div>
                 </div>
@@ -472,5 +475,7 @@ export default function Home() {
         </div>
       </section>
     </main>
+    <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
+    </>
   )
 }

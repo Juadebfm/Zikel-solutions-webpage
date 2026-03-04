@@ -41,8 +41,7 @@ export default function PrivacyPolicy() {
                 <p>
                   Zikel Solutions ("we", "us", "our") is a software company registered in England and
                   Wales. We provide AI-enabled software platforms for children's residential homes,
-                  healthcare organisations, and corporate teams. Our registered address and data
-                  controller contact is: <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>.
+                  healthcare organisations, and corporate teams. Our data controller contact is: <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>.
                 </p>
                 <p>
                   We are committed to protecting the privacy and security of all personal data we
@@ -58,7 +57,7 @@ export default function PrivacyPolicy() {
                   <li><strong>Identity data:</strong> name, job title, role.</li>
                   <li><strong>Contact data:</strong> email address, telephone number, organisation name.</li>
                   <li><strong>Platform usage data:</strong> log activity, documentation records, timestamps, and workflow patterns generated through use of our software.</li>
-                  <li><strong>Special category data (where applicable):</strong> data relating to children in care — including safeguarding records, health information, education records, and chronologies — processed on behalf of our client organisations as a data processor.</li>
+                  <li><strong>Special category data (where applicable):</strong> data relating to children in care, including safeguarding records, health information, education records, and chronologies, processed on behalf of our client organisations as a data processor.</li>
                   <li><strong>Technical data:</strong> IP address, browser type, device information, and access logs.</li>
                   <li><strong>Marketing data:</strong> your preferences in receiving communications from us.</li>
                 </ul>
@@ -68,17 +67,17 @@ export default function PrivacyPolicy() {
                 <h4 className="mt-4">3. How We Use Your Data</h4>
                 <p>We use personal data for the following purposes and on the following legal bases:</p>
                 <ul>
-                  <li><strong>To deliver our software services</strong> — contractual necessity (UK GDPR Art. 6(1)(b)).</li>
-                  <li><strong>To process children's care records</strong> on behalf of registered children's home providers — as a data processor under a Data Processing Agreement, with the care provider acting as data controller.</li>
-                  <li><strong>To comply with legal and regulatory obligations</strong> — including obligations under the Children Act 1989, the Care Standards Act 2000, and Ofsted regulations (UK GDPR Art. 6(1)(c)).</li>
-                  <li><strong>To respond to enquiries and provide support</strong> — legitimate interests (UK GDPR Art. 6(1)(f)).</li>
-                  <li><strong>To send marketing communications</strong> — only with your explicit consent (UK GDPR Art. 6(1)(a)); you may withdraw consent at any time.</li>
-                  <li><strong>To improve and develop our platform</strong> — legitimate interests, using anonymised and aggregated data only.</li>
+                  <li><strong>To deliver our software services:</strong> contractual necessity (UK GDPR Art. 6(1)(b)).</li>
+                  <li><strong>To process children's care records</strong> on behalf of registered children's home providers, as a data processor under a Data Processing Agreement, with the care provider acting as data controller.</li>
+                  <li><strong>To comply with legal and regulatory obligations:</strong> including obligations under the Children Act 1989, the Care Standards Act 2000, and Ofsted regulations (UK GDPR Art. 6(1)(c)).</li>
+                  <li><strong>To respond to enquiries and provide support:</strong> legitimate interests (UK GDPR Art. 6(1)(f)).</li>
+                  <li><strong>To send marketing communications:</strong> only with your explicit consent (UK GDPR Art. 6(1)(a)); you may withdraw consent at any time.</li>
+                  <li><strong>To improve and develop our platform:</strong> legitimate interests, using anonymised and aggregated data only.</li>
                 </ul>
               </FadeSection>
 
               <FadeSection delay={0.25}>
-                <h4 className="mt-4">4. Special Category Data — Children in Care</h4>
+                <h4 className="mt-4">4. Special Category Data: Children in Care</h4>
                 <p>
                   Where our platform processes special category data relating to children in care
                   (including safeguarding chronologies, health records, and incident data), this is
@@ -104,7 +103,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <ul>
                   <li>Encryption in transit (TLS) and at rest.</li>
-                  <li>Role-based access control — staff see only the data their role permits.</li>
+                  <li>Role-based access control: staff see only the data their role permits.</li>
                   <li>Full audit trails on all data access and modifications.</li>
                   <li>Regular security reviews and vulnerability assessments.</li>
                   <li>Staff confidentiality obligations and data protection training.</li>
@@ -133,13 +132,13 @@ export default function PrivacyPolicy() {
                 <h4 className="mt-4">7. Your Rights</h4>
                 <p>Under UK GDPR, you have the following rights:</p>
                 <ul>
-                  <li><strong>Right of access</strong> — to obtain a copy of your personal data.</li>
-                  <li><strong>Right to rectification</strong> — to correct inaccurate data.</li>
-                  <li><strong>Right to erasure</strong> — to request deletion where there is no compelling reason for continued processing.</li>
-                  <li><strong>Right to restriction</strong> — to limit how we use your data.</li>
-                  <li><strong>Right to data portability</strong> — to receive your data in a structured, machine-readable format.</li>
-                  <li><strong>Right to object</strong> — to processing based on legitimate interests.</li>
-                  <li><strong>Rights related to automated decision-making</strong> — our AI provides guidance and alerts; it does not make binding automated decisions about individuals.</li>
+                  <li><strong>Right of access:</strong> to obtain a copy of your personal data.</li>
+                  <li><strong>Right to rectification:</strong> to correct inaccurate data.</li>
+                  <li><strong>Right to erasure:</strong> to request deletion where there is no compelling reason for continued processing.</li>
+                  <li><strong>Right to restriction:</strong> to limit how we use your data.</li>
+                  <li><strong>Right to data portability:</strong> to receive your data in a structured, machine-readable format.</li>
+                  <li><strong>Right to object:</strong> to processing based on legitimate interests.</li>
+                  <li><strong>Rights related to automated decision-making:</strong> our AI provides guidance and alerts; it does not make binding automated decisions about individuals.</li>
                 </ul>
                 <p>
                   To exercise any of these rights, please contact us at{' '}

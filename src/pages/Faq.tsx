@@ -102,7 +102,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     q: 'How can we get started?',
     a: (
       <>
-        <p>Simply contact us through the form or schedule a consultation. We will:</p>
+        <p>Simply contact us through the form or join our waitlist. We will:</p>
         <ol className="text-start">
           <li className="ps-1">Discuss your goals</li>
           <li className="ps-1">Review your current workflows</li>

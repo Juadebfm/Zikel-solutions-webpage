@@ -24,7 +24,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      '"As a startup, we required a development partner who could help us build a scalable AI-driven diagnostics tool. Their team exceeded every expectation—clear communication, deep technical knowledge, and a strategic approach to product design. Thanks to them, we launched on schedule and with immense confidence."',
+      '"As a startup, we required a development partner who could help us build a scalable AI-driven diagnostics tool. Their team exceeded every expectation: clear communication, deep technical knowledge, and a strategic approach to product design. Thanks to them, we launched on schedule and with immense confidence."',
     name: 'Jane Roberts',
     org: 'CEO, VitalCheck AI',
   },
@@ -33,11 +33,11 @@ const TESTIMONIALS = [
 const DIFFERENCE_ITEMS = [
   {
     title: 'Purpose-Built for Real-World Challenges',
-    body: "We understand the daily pressures faced by children's homes, healthcare institutions, and corporate teams. Our solutions address real operational gaps—not theoretical ones.",
+    body: "We understand the daily pressures faced by children's homes, healthcare institutions, and corporate teams. Our solutions address real operational gaps, not theoretical ones.",
   },
   {
     title: 'AI With Integrity',
-    body: 'Our AI empowers staff. It does not replace human judgment. It highlights training gaps, supervision needs, and workflow inconsistencies—supporting staff growth.',
+    body: 'Our AI empowers staff. It does not replace human judgment. It highlights training gaps, supervision needs, and workflow inconsistencies, supporting staff growth.',
   },
   {
     title: 'User-Centered Design',
@@ -110,7 +110,7 @@ export default function About() {
                     <div className="content-box">
                       <FadeSection delay={0.2}>
                         <p>
-                          Our work began inside the walls of children's homes—where documentation,
+                          Our work began inside the walls of children's homes, where documentation,
                           supervision, staff training, and child safeguarding are mission-critical
                           yet often overwhelming. We built intelligent software designed to
                           bring order, accuracy, and accountability to everyday operations.
@@ -123,7 +123,7 @@ export default function About() {
                         </p>
                         <p>
                           <strong>
-                            Documentation alone is not enough—staff also need guidance, prompts,
+                            Documentation alone is not enough; staff also need guidance, prompts,
                             and support.
                           </strong>
                         </p>

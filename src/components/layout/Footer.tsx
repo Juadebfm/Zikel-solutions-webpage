@@ -35,7 +35,7 @@ export default function Footer() {
               </Link>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '15px', lineHeight: '26px', marginBottom: '28px' }}>
-              Intelligent guidance software for children's homes, healthcare institutions, and corporate teams — built to strengthen accountability and care standards.
+              Intelligent guidance software for children's homes, healthcare institutions, and corporate teams, built to strengthen accountability and care standards.
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               {[
@@ -129,7 +129,6 @@ export default function Footer() {
             </h6>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
-                { icon: 'fa-location-dot', text: 'Riverside Park EU-1001' },
                 { icon: 'fa-envelope', text: 'contact@zikelsolutions.com', href: 'mailto:contact@zikelsolutions.com' },
                 { icon: 'fa-phone', text: '+234 803 281 9367', href: 'tel:+2348032819367' },
                 { icon: 'fa-clock', text: 'Mon–Fri, 09:00 AM – 06:00 PM' },

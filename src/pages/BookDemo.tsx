@@ -75,7 +75,7 @@ export default function BookDemo() {
                 <p style={{ color: 'var(--text)', lineHeight: '28px', marginBottom: '32px' }}>
                   Book a personalised demo and see exactly how our platform can work for your
                   organisation. Whether you run a children's home, a healthcare facility, or a
-                  corporate team — we'll walk you through the features most relevant to you.
+                  corporate team, and we'll walk you through the features most relevant to you.
                 </p>
 
                 <h6 style={{ color: 'var(--header)', fontWeight: 700, marginBottom: '16px' }}>What to expect:</h6>
@@ -84,7 +84,7 @@ export default function BookDemo() {
                     '30–45 minute live walkthrough',
                     'Tailored to your sector and team size',
                     'Q&A with our product team',
-                    'No obligation — just clarity',
+                    'No obligation, just clarity',
                   ].map((item) => (
                     <li key={item} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', marginBottom: '12px' }}>
                       <i className="fa-solid fa-circle-check" style={{ color: 'var(--theme)', marginTop: '4px', flexShrink: 0 }}></i>

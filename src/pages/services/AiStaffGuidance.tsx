@@ -10,7 +10,7 @@ export default function AiStaffGuidance() {
       intro={
         <p>
           Your staff generate activity patterns every day. Our AI analyses these patterns to deliver
-          real-time prompts, risk escalation alerts, and supervision triggers — helping Responsible
+          real-time prompts, risk escalation alerts, and supervision triggers, helping Responsible
           Individuals and managers maintain consistent professional standards and catch concerns
           before they escalate.
         </p>
@@ -18,13 +18,13 @@ export default function AiStaffGuidance() {
       featuresSectionTitle="AI CAPABILITIES"
       features={[
         { label: 'Risk Escalation Alerts:', desc: 'Automated alerts notify supervisors and Responsible Individuals when staff behaviour, documentation gaps, or incident patterns reach a risk threshold.' },
-        { label: 'Pattern Mapping Across Incidents:', desc: 'Identifies recurring themes across incidents, staff responses, and child behaviour — enabling early intervention rather than reactive management.' },
-        { label: 'Internal Monitoring Dashboard for RIs:', desc: 'Responsible Individuals get a live compliance and performance dashboard — incident trends, supervision completion, staff wellbeing indicators, and documentation quality at a glance.' },
+        { label: 'Pattern Mapping Across Incidents:', desc: 'Identifies recurring themes across incidents, staff responses, and child behaviour, enabling early intervention rather than reactive management.' },
+        { label: 'Internal Monitoring Dashboard for RIs:', desc: 'Responsible Individuals get a live compliance and performance dashboard: incident trends, supervision completion, staff wellbeing indicators, and documentation quality at a glance.' },
         { label: 'Activity Monitoring:', desc: 'Tracks how and when staff complete documentation, flags delays, and identifies patterns of inconsistency.' },
         { label: 'Real-Time Guidance Prompts:', desc: 'Alerts staff when required logs or reports are incomplete, and suggests next steps.' },
         { label: 'Supervision Suggestions:', desc: 'Identifies when a staff member may require additional support or a supervision session based on their activity footprint.' },
         { label: 'Training Recommendations:', desc: 'Suggests targeted courses, refreshers, or development pathways based on identified gaps.' },
-        { label: 'Wellbeing Indicators:', desc: 'Detects patterns that may indicate stress, disengagement, or burnout — before it affects children in care.' },
+        { label: 'Wellbeing Indicators:', desc: 'Detects patterns that may indicate stress, disengagement, or burnout, before it affects children in care.' },
       ]}
       benefits={[
         'Risk escalation alerts keep supervisors and RIs informed in real time',
@@ -36,10 +36,10 @@ export default function AiStaffGuidance() {
       ]}
       howItWorks={[
         { step: '01.', text: 'AI continuously analyses staff activity, documentation, and incident logs' },
-        { step: '02.', text: 'Patterns are mapped — strengths, gaps, and risk indicators identified' },
+        { step: '02.', text: 'Patterns are mapped: strengths, gaps, and risk indicators identified' },
         { step: '03.', text: 'Real-time prompts and risk escalation alerts are delivered' },
         { step: '04.', text: 'Supervisors and RIs receive actionable insights via their dashboard' },
-        { step: '05.', text: 'Staff performance and child safety outcomes improve — measurably' },
+        { step: '05.', text: 'Staff performance and child safety outcomes improve, measurably' },
       ]}
       useCases={[
         { step: '01.', text: "Children's residential homes and therapeutic care providers" },

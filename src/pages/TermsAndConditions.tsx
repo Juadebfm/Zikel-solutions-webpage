@@ -58,7 +58,7 @@ export default function TermsAndConditions() {
                   include but are not limited to:
                 </p>
                 <ul>
-                  <li>AI Staff Guidance &amp; Monitoring System — including pattern mapping, RI dashboards, and supervision triggers.</li>
+                  <li>AI Staff Guidance &amp; Monitoring System, including pattern mapping, RI dashboards, and supervision triggers.</li>
                   <li>Training &amp; Professional Development Intelligence.</li>
                   <li>Healthcare Workflow Support Software.</li>
                   <li>Consultation and organisational needs assessment.</li>
@@ -158,7 +158,7 @@ export default function TermsAndConditions() {
                   including Regulation 44 and Regulation 45 of the Children's Homes (England)
                   Regulations 2015. However, ultimate responsibility for regulatory compliance
                   rests with the registered provider and Responsible Individual of each children's
-                  home. Our software is a tool to support — not to replace — professional judgement,
+                  home. Our software is a tool to support, not to replace, professional judgement,
                   supervision, and leadership.
                 </p>
                 <p>

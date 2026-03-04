@@ -69,10 +69,10 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     icon: '/assets/img/home-1/icon/01.svg',
     title: 'Consultation & Organizational Needs Assessment',
-    to: '/consultation',
+    to: '/contact',
     description:
       "We assess organizational processes and help you implement the right technology for your goals.",
-    ctaLabel: 'Book Consultation',
+    ctaLabel: 'Get in Touch',
   },
 ]
 
