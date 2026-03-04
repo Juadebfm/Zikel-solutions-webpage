@@ -1,0 +1,172 @@
+/* Global CSS entry point — Vite default styles cleared */
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  display: block;
+  min-width: 320px;
+  /* Match the original site body background so sections without their own
+     background colour render correctly. The preloader panels cover any
+     brief flash before React mounts. */
+  background-color: #EFEDE5;
+}
+
+/* ── Custom cursor — fix inherited visibility: hidden + full-viewport stretch ─
+ * main.css sets visibility: hidden (expects JS to reveal it) and
+ * stretches .mouseCursor to fill the viewport (inset: 0), which breaks
+ * Framer Motion's x/y translate positioning. Override both here. */
+.mouseCursor {
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  visibility: visible !important;
+}
+
+/* Center the dots on the cursor position: Framer Motion's x/y set the element's
+ * top-left corner at (mouseX, mouseY). Negative margins shift each dot back
+ * by half its own width/height so the dot's centre aligns with the pointer. */
+.cursor-outer {
+  margin-inline-start: -15px !important;  /* -½ × 30px */
+  margin-top: -15px !important;
+}
+.cursor-inner {
+  margin-inline-start: -5px !important;   /* -½ × 10px */
+  margin-top: -5px !important;
+}
+
+/*
+ * Layout fix: in the original site, ALL page content lived inside GSAP's
+ * #smooth-wrapper (position: fixed; top: 0), so content always started at y=0
+ * with the header overlaying it. In React we replicate this by fixing the
+ * header-top-section so it no longer occupies document flow, and keeping
+ * header-1's existing position: absolute behaviour.
+ */
+.header-top-section {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
+  margin-bottom: 0 !important;
+}
+
+/* ── Top bar: WCAG AA contrast fix ──────────────────────────────────────────
+ * White on #F94D00 = ~2.9:1 (fails). Dark on #F94D00 = ~6:1 (passes AA). */
+.header-top-wrapper .header-left .list li,
+.header-top-wrapper .header-left .list li a,
+.header-top-wrapper .header-right span {
+  color: var(--header) !important;
+  font-size: 14px;
+}
+
+/* ── Top bar: social icons — flat, no circle, matches dark text treatment ─── */
+.header-top-wrapper .header-right .social-icon a {
+  opacity: 1 !important;
+  background-color: transparent !important;
+  color: #0B0D17 !important;
+  font-size: 14px !important;
+}
+.header-top-wrapper .header-right .social-icon a:hover {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+  color: #0B0D17 !important;
+}
+
+/* ── Service/feature cards: list items turn white on hover ───────────────── *
+ * main.css only covers h3/p on hover. Lists were in an inline <style> tag.  */
+.service-box-item:hover .content ul li,
+.feature-card-items-3:hover .content ul li {
+  color: var(--white);
+  position: relative;
+  z-index: 999;
+}
+
+/* ── About section: preserve content-box position after count-item removal ── */
+.about-count-spacer {
+  min-width: 260px;
+  flex-shrink: 0;
+}
+@media (max-width: 1399px) {
+  .about-count-spacer { display: none; }
+}
+
+/* ── Testimonial slider: equal-height cards ─────────────────────────────── */
+.testimonial-slider .swiper-slide {
+  height: auto;
+}
+.testimonial-slider .testimonial-box-item {
+  height: 100%;
+  box-sizing: border-box;
+}
+.testimonial-slider .testimonial-box-item p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+/* ── Accordion question font size: reduced by 1.5px from original 24px ───── */
+.faq-items .accordion .accordion-item h2 button,
+.faq-items-3 .accordion .accordion-item h2 button {
+  font-size: 22.5px !important;
+}
+@media (max-width: 1399px) {
+  .faq-items .accordion .accordion-item h2 button,
+  .faq-items-3 .accordion .accordion-item h2 button {
+    font-size: 18.5px !important;
+  }
+}
+
+/* ── Accordion icons: replace FA Pro \f068 (minus) with plain unicode ───── *
+ * Font Awesome 6 Pro is not loaded — collapsed state icon renders as a box.
+ * Override both accordions (faq-items + faq-items-3) to use plain text. */
+.faq-items .accordion .accordion-button.collapsed::before,
+.faq-wrapper-3 .faq-items-3 .accordion .accordion-button.collapsed::before {
+  content: "−";
+  font-family: inherit;
+}
+
+/* ── Generic form-clt inputs (React forms don't have legacy parent selectors) */
+.form-clt input,
+.form-clt textarea {
+  width: 100%;
+  outline: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--header);
+  font-size: 15px;
+  padding: 14px 16px;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+.form-clt input::placeholder,
+.form-clt textarea::placeholder {
+  color: #aaa;
+}
+.form-clt input:focus,
+.form-clt textarea:focus {
+  border-color: var(--theme);
+}
+.form-clt textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* ── Navbar: active link — orange underline indicator ───────────────────── *
+ * Let the original CSS handle text colour (white on transparent, dark on
+ * sticky). We only add the underline accent that the original doesn't have. */
+.header-main .main-menu ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--theme);
+  border-radius: 2px;
+}
