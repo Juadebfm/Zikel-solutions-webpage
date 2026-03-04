@@ -80,7 +80,7 @@ export default function Header() {
               className="offcanvas__overlay"
               style={{ visibility: 'visible', zIndex: 9999998 }}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={{ opacity: 0.45 }}
               exit={{ opacity: 0 }}
               onClick={() => setSidebarOpen(false)}
             />
@@ -92,82 +92,79 @@ export default function Header() {
               transition={{ type: 'tween', duration: 0.3 }}
             >
               <div className="offcanvas__wrapper">
-                  <div className="offcanvas__content">
-                    <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                      <div className="offcanvas__logo">
-                        <Link to="/" onClick={() => setSidebarOpen(false)}>
-                          <img src="/assets/img/logo/black-logo.svg" alt="Zikel Solutions" />
-                        </Link>
-                      </div>
-                      <div className="offcanvas__close">
-                        <button onClick={() => setSidebarOpen(false)} aria-label="Close menu">
-                          <i className="fas fa-times"></i>
-                        </button>
-                      </div>
+                <div className="offcanvas__content">
+                  {/* Logo + close */}
+                  <div className="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
+                    <div className="offcanvas__logo">
+                      <Link to="/" onClick={() => setSidebarOpen(false)}>
+                        <img src="/assets/img/logo/black-logo.svg" alt="Zikel Solutions" />
+                      </Link>
                     </div>
-                    <div className="mobile-menu fix mb-3">
-                      <nav>
-                        <ul>
-                          {navLinks.map((link) => (
-                            <li key={link.to}>
-                              <NavLink
-                                to={link.to}
-                                end={link.end}
-                                onClick={() => setSidebarOpen(false)}
-                                className={({ isActive }) => isActive ? 'active' : ''}
-                              >
-                                {link.label}
-                              </NavLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </nav>
+                    <div className="offcanvas__close">
+                      <button onClick={() => setSidebarOpen(false)} aria-label="Close menu">
+                        <i className="fas fa-times"></i>
+                      </button>
                     </div>
-                    <div className="offcanvas__contact d-xl-block">
-                      <h4>Contact Info</h4>
-                      <ul>
-                        <li className="d-flex align-items-center">
-                          <div className="offcanvas__contact-icon">
-                            <i className="fal fa-map-marker-alt"></i>
-                          </div>
-                          <div className="offcanvas__contact-text">
-                            <a href="#">Main Street, Melbourne, Australia</a>
-                          </div>
+                  </div>
+
+                  {/* Nav links */}
+                  <nav style={{ marginBottom: '24px' }}>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                      {navLinks.map((link) => (
+                        <li key={link.to} style={{ borderBottom: '1px solid #efefef' }}>
+                          <NavLink
+                            to={link.to}
+                            end={link.end}
+                            onClick={() => setSidebarOpen(false)}
+                            className={({ isActive }) => isActive ? 'active' : ''}
+                            style={{ display: 'block', fontSize: '19px', fontWeight: 600, padding: '15px 4px', color: 'var(--header)', textDecoration: 'none' }}
+                          >
+                            {link.label}
+                          </NavLink>
                         </li>
-                        <li className="d-flex align-items-center">
-                          <div className="offcanvas__contact-icon mr-15">
-                            <i className="fal fa-envelope"></i>
-                          </div>
-                          <div className="offcanvas__contact-text">
-                            <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>
-                          </div>
-                        </li>
-                        <li className="d-flex align-items-center">
-                          <div className="offcanvas__contact-icon mr-15">
-                            <i className="fal fa-clock"></i>
-                          </div>
-                          <div className="offcanvas__contact-text">
-                            <a href="#">Mon–Friday, 09am–05pm</a>
-                          </div>
-                        </li>
-                        <li className="d-flex align-items-center">
-                          <div className="offcanvas__contact-icon mr-15">
-                            <i className="far fa-phone"></i>
-                          </div>
-                          <div className="offcanvas__contact-text">
-                            <a href="tel:+2348032819367">+234 803 281 9367</a>
-                          </div>
-                        </li>
-                      </ul>
-                      <div className="social-icon d-flex align-items-center">
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-youtube"></i></a>
-                        <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                      </div>
+                      ))}
+                    </ul>
+                  </nav>
+
+                  {/* Join Waitlist CTA */}
+                  <button
+                    className="theme-btn"
+                    style={{ width: '100%', justifyContent: 'center', fontSize: '15px', marginBottom: '28px' }}
+                    onClick={() => { setSidebarOpen(false); setWaitlistOpen(true) }}
+                  >
+                    Join Waitlist <i className="fa-solid fa-arrow-up-right"></i>
+                  </button>
+
+                  {/* Contact info */}
+                  <div className="offcanvas__contact">
+                    <h4 style={{ marginBottom: '16px', fontSize: '16px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Contact</h4>
+                    <ul>
+                      <li className="d-flex align-items-center" style={{ marginBottom: '10px' }}>
+                        <div className="offcanvas__contact-icon mr-15">
+                          <i className="fal fa-envelope"></i>
+                        </div>
+                        <div className="offcanvas__contact-text">
+                          <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>
+                        </div>
+                      </li>
+                      <li className="d-flex align-items-center" style={{ marginBottom: '10px' }}>
+                        <div className="offcanvas__contact-icon mr-15">
+                          <i className="far fa-phone"></i>
+                        </div>
+                        <div className="offcanvas__contact-text">
+                          <a href="tel:+2348032819367">+234 803 281 9367</a>
+                        </div>
+                      </li>
+                    </ul>
+                    <div className="social-icon d-flex align-items-center" style={{ marginTop: '16px' }}>
+                      <a href="#"><i className="fab fa-facebook-f"></i></a>
+                      <a href="#"><i className="fab fa-twitter"></i></a>
+                      <a href="#"><i className="fab fa-youtube"></i></a>
+                      <a href="#"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                   </div>
                 </div>
+              </div>
             </motion.div>
           </>
         )}
