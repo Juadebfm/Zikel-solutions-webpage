@@ -58,9 +58,6 @@ export default function Header() {
               </ul>
             </div>
             <div className="header-right">
-              <span>
-                <i className="fa-regular fa-clock"></i> Mon–Fri 09:00 AM – 06:00 PM
-              </span>
               <div className="social-icon">
                 <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i className="fa-brands fa-twitter"></i></a>

@@ -135,7 +135,7 @@ export default function Footer() {
                 { icon: 'fa-phone', text: '+234 803 281 9367', href: 'tel:+2348032819367' },
                 { icon: 'fa-clock', text: 'Mon–Fri, 09:00 AM – 06:00 PM' },
               ].map(({ icon, text, href }) => (
-                <li key={icon} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', marginBottom: '18px' }}>
+                <li key={icon} style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '18px' }}>
                   <span style={{
                     width: '38px',
                     height: '38px',
@@ -147,7 +147,6 @@ export default function Footer() {
                     flexShrink: 0,
                     fontSize: '13px',
                     color: '#fff',
-                    marginTop: '2px',
                   }}>
                     <i className={`fa-solid ${icon}`}></i>
                   </span>
