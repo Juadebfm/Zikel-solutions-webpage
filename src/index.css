@@ -77,6 +77,29 @@ body {
   color: #0B0D17 !important;
 }
 
+/* ── Industries slider: equal-height cards ───────────────────────────────── */
+.service-slider .swiper-wrapper { align-items: stretch; }
+.service-slider .swiper-slide  { height: auto; display: flex; }
+.service-slider .service-box-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.service-slider .service-box-item .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.service-slider .service-box-item .content ul {
+  margin-bottom: 15px;
+}
+.service-slider .service-box-item .content ul li {
+  font-size: 14px;
+}
+.service-slider .service-box-item .content .theme-btn {
+  margin-top: auto;
+}
+
 /* ── Service/feature cards: list items turn white on hover ───────────────── *
  * main.css only covers h3/p on hover. Lists were in an inline <style> tag.  */
 .service-box-item:hover .content ul li,
