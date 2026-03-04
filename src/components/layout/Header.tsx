@@ -205,8 +205,8 @@ export default function Header() {
                 </div>
               </div>
               <div className="header-right d-flex justify-content-end align-items-center">
-                <div className="header-btn">
-                  <h6>
+                <div className="header-btn d-flex align-items-center">
+                  <h6 className="d-none d-xl-block" style={{ margin: 0 }}>
                     <i className="fa-regular fa-phone-volume"></i>
                     <a href="tel:+2348032819367">+234 803 281 9367</a>
                   </h6>
@@ -217,16 +217,25 @@ export default function Header() {
                   >
                     Join Waitlist
                   </button>
-                  <div className="header__hamburger d-xl-none my-auto">
-                    <button
-                      className="sidebar__toggle"
-                      onClick={() => setSidebarOpen(true)}
-                      aria-label="Open menu"
-                      style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
-                    >
-                      <i className="fas fa-bars"></i>
-                    </button>
-                  </div>
+                  <button
+                    className="d-xl-none"
+                    onClick={() => setSidebarOpen(true)}
+                    aria-label="Open menu"
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: '8px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '5px',
+                      marginLeft: '12px',
+                    }}
+                  >
+                    <span style={{ width: '24px', height: '2px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
+                    <span style={{ width: '18px', height: '2px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
+                    <span style={{ width: '24px', height: '2px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
+                  </button>
                 </div>
               </div>
             </div>

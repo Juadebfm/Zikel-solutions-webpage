@@ -1,36 +1,21 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import FadeSection from '../components/ui/FadeSection'
 import AnimatedText from '../components/ui/AnimatedText'
+import ServiceDropdown from '../components/ui/ServiceDropdown'
 
 interface ContactFormData {
-  Full_Name: string
-  Email_Address: string
-  Phone_Number: string
-  Contact_Service: string
+  fullName: string
+  email: string
+  phoneNumber: string
+  serviceOfInterest: string
   message: string
 }
 
 type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
 
-const SERVICES = [
-  "Digital Filing Cabinet (Children's Homes)",
-  'AI-Powered Staff Guidance System',
-  'Training & Professional Development Intelligence',
-  'Healthcare Workflow Support Software',
-  'Corporate AI Staff Support System',
-  'Software Customization & Integrations',
-  'Consultation & Organizational Needs Assessment',
-]
-
 const INFO_CARDS = [
-  {
-    icon: 'fa-sharp fa-solid fa-location-dot',
-    title: 'Our address',
-    body: <p>374 William S Canning Blvd, Fall River MA 2721, USA</p>,
-    delay: 0.3,
-  },
   {
     icon: 'fa-solid fa-phone-xmark',
     title: 'Contact Us',
@@ -40,18 +25,7 @@ const INFO_CARDS = [
         <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>
       </p>
     ),
-    delay: 0.5,
-  },
-  {
-    icon: 'fa-regular fa-clock-two-thirty',
-    title: 'Open hour',
-    body: (
-      <>
-        <p>Mon - Sat: 9:00 - 6:00</p>
-        <p>Sunday: Closed</p>
-      </>
-    ),
-    delay: 0.7,
+    delay: 0.3,
   },
 ]
 
@@ -63,21 +37,22 @@ export default function Contact() {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors },
   } = useForm<ContactFormData>()
 
   const onSubmit = async (data: ContactFormData) => {
     setStatus('loading')
     try {
-      const response = await fetch('http://localhost/sender/send-email.php', {
+      const response = await fetch('https://zikel-solutions-be.fly.dev/api/v1/public/contact-us', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...data, source: 'Contact Us Page' }),
       })
       const result = await response.json()
-      if (result.error) {
+      if (!response.ok || !result.success) {
         setStatus('error')
-        setStatusMessage(result.message || 'Something went wrong. Please try again.')
+        setStatusMessage(result.error?.message || 'Something went wrong. Please try again.')
       } else {
         setStatus('success')
         setStatusMessage('Message sent successfully!')
@@ -142,141 +117,91 @@ export default function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="contact-section fix section-padding pt-0">
+      <section className="section-padding pt-0 fix">
         <div className="container">
-          <div className="contact-wrapper-inner">
-            <div className="row g-4">
-              <div className="col-lg-10 mx-auto">
-                <div className="contact-box-items">
+          <div className="row g-4">
+            <div className="col-lg-10 mx-auto">
+              <FadeSection>
+                <div style={{ background: '#F5F4EF', borderRadius: '16px', padding: '40px' }}>
                   <AnimatedText text="Send Us A Message." as="h2" />
+                  <p style={{ color: 'var(--text)', fontSize: '15px', marginBottom: '28px' }}>
+                    Have a question or want to learn more? Fill in the form below and we'll get back to you.
+                  </p>
 
-                  <form
-                    id="serviceForm"
-                    className="contact-form-box"
-                    onSubmit={handleSubmit(onSubmit)}
-                    noValidate
-                  >
-                    <div className="row g-4 align-items-center">
+                  <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                    <div className="row g-4">
 
-                      {/* Full Name */}
-                      <div className="col-lg-6 col-md-6">
-                        <FadeSection delay={0.3}>
-                          <div className="form-clt">
-                            <input
-                              type="text"
-                              placeholder="Full name *"
-                              {...register('Full_Name', { required: 'Full name is required' })}
-                              aria-invalid={!!errors.Full_Name}
+                      <div className="col-lg-6"><div className="form-clt">
+                        <input type="text" placeholder="Full Name *"
+                          {...register('fullName', { required: 'Full name is required' })} />
+                        {errors.fullName && <span className="text-danger small">{errors.fullName.message}</span>}
+                      </div></div>
+
+                      <div className="col-lg-6"><div className="form-clt">
+                        <input type="email" placeholder="Email Address *"
+                          {...register('email', {
+                            required: 'Email is required',
+                            pattern: { value: /^\S+@\S+\.\S+$/, message: 'Enter a valid email' },
+                          })} />
+                        {errors.email && <span className="text-danger small">{errors.email.message}</span>}
+                      </div></div>
+
+                      <div className="col-lg-6"><div className="form-clt">
+                        <input type="tel" placeholder="Phone Number *"
+                          {...register('phoneNumber', { required: 'Phone number is required' })} />
+                        {errors.phoneNumber && <span className="text-danger small">{errors.phoneNumber.message}</span>}
+                      </div></div>
+
+                      <div className="col-lg-6">
+                        <Controller
+                          name="serviceOfInterest"
+                          control={control}
+                          rules={{ required: true }}
+                          defaultValue=""
+                          render={({ field }) => (
+                            <ServiceDropdown
+                              value={field.value}
+                              onChange={field.onChange}
+                              error={!!errors.serviceOfInterest}
+                              placeholder="Choose a service *"
                             />
-                            {errors.Full_Name && (
-                              <span className="text-danger small">{errors.Full_Name.message}</span>
-                            )}
-                          </div>
-                        </FadeSection>
+                          )}
+                        />
+                        {errors.serviceOfInterest && <span className="text-danger small">Please select a service</span>}
                       </div>
 
-                      {/* Email */}
-                      <div className="col-lg-6 col-md-6">
-                        <FadeSection delay={0.5}>
-                          <div className="form-clt">
-                            <input
-                              type="email"
-                              placeholder="Email address *"
-                              {...register('Email_Address', {
-                                required: 'Email is required',
-                                pattern: { value: /^\S+@\S+\.\S+$/, message: 'Enter a valid email' },
-                              })}
-                              aria-invalid={!!errors.Email_Address}
-                            />
-                            {errors.Email_Address && (
-                              <span className="text-danger small">{errors.Email_Address.message}</span>
-                            )}
-                          </div>
-                        </FadeSection>
-                      </div>
+                      <div className="col-lg-12"><div className="form-clt">
+                        <textarea placeholder="Type your message"
+                          {...register('message')} />
+                      </div></div>
 
-                      {/* Phone */}
-                      <div className="col-lg-6 col-md-6">
-                        <FadeSection delay={0.3}>
-                          <div className="form-clt">
-                            <input
-                              type="tel"
-                              placeholder="Phone number *"
-                              {...register('Phone_Number', { required: 'Phone number is required' })}
-                              aria-invalid={!!errors.Phone_Number}
-                            />
-                            {errors.Phone_Number && (
-                              <span className="text-danger small">{errors.Phone_Number.message}</span>
-                            )}
-                          </div>
-                        </FadeSection>
-                      </div>
-
-                      {/* Service Select */}
-                      <div className="col-lg-6 col-md-6">
-                        <FadeSection delay={0.5}>
-                          <div className="form-clt">
-                            <select className="w-100" {...register('Contact_Service')}>
-                              <option value="">Choose a service</option>
-                              {SERVICES.map((s) => (
-                                <option key={s} value={s}>{s}</option>
-                              ))}
-                            </select>
-                          </div>
-                        </FadeSection>
-                      </div>
-
-                      {/* Message */}
-                      <div className="col-lg-12">
-                        <FadeSection delay={0.3}>
-                          <div className="form-clt">
-                            <textarea
-                              placeholder="Type your message"
-                              {...register('message')}
-                            />
-                          </div>
-                        </FadeSection>
-                      </div>
-
-                      {/* Status feedback */}
                       {status === 'success' && (
-                        <div className="col-lg-12">
-                          <div className="alert alert-success" role="alert">
-                            <i className="fa-solid fa-circle-check me-2"></i>
-                            {statusMessage}
+                        <div className="col-12">
+                          <div className="alert alert-success">
+                            <i className="fa-solid fa-circle-check me-2"></i>{statusMessage}
                           </div>
                         </div>
                       )}
                       {status === 'error' && (
-                        <div className="col-lg-12">
-                          <div className="alert alert-danger" role="alert">
-                            <i className="fa-solid fa-circle-xmark me-2"></i>
-                            {statusMessage}
+                        <div className="col-12">
+                          <div className="alert alert-danger">
+                            <i className="fa-solid fa-circle-xmark me-2"></i>{statusMessage}
                           </div>
                         </div>
                       )}
 
-                      {/* Submit */}
-                      <div className="col-lg-12">
-                        <FadeSection delay={0.5}>
-                          <button
-                            type="submit"
-                            className="theme-btn"
-                            disabled={status === 'loading'}
-                          >
-                            {status === 'loading' ? (
-                              <>Sending… <i className="fa-solid fa-spinner fa-spin"></i></>
-                            ) : (
-                              <>Send now <i className="fa-solid fa-arrow-up-right"></i></>
-                            )}
-                          </button>
-                        </FadeSection>
+                      <div className="col-12">
+                        <button type="submit" className="theme-btn" disabled={status === 'loading'}>
+                          {status === 'loading'
+                            ? <>Sending… <i className="fa-solid fa-spinner fa-spin"></i></>
+                            : <>Send Now <i className="fa-solid fa-arrow-up-right"></i></>}
+                        </button>
                       </div>
 
                     </div>
                   </form>
                 </div>
-              </div>
+              </FadeSection>
             </div>
           </div>
         </div>

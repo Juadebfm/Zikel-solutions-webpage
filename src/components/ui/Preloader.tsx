@@ -1,12 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 
 const SPRING = [0.34, 1.56, 0.64, 1] as [number, number, number, number]
-const CURTAIN = [0.76, 0, 0.24, 1] as [number, number, number, number]
+const EASE_OUT = [0.76, 0, 0.24, 1] as [number, number, number, number]
+
+const DIRECTIONS = ['up', 'down', 'left', 'right'] as const
+
+function getExitTransform(dir: (typeof DIRECTIONS)[number]) {
+  switch (dir) {
+    case 'up': return { y: '-100%' }
+    case 'down': return { y: '100%' }
+    case 'left': return { x: '-100%' }
+    case 'right': return { x: '100%' }
+  }
+}
 
 export default function Preloader() {
   const [exiting, setExiting] = useState(false)
-  const [done, setDone]       = useState(false)
+  const [done, setDone] = useState(false)
+
+  const direction = useMemo(
+    () => DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)],
+    [],
+  )
 
   useEffect(() => {
     const t1 = setTimeout(() => setExiting(true), 2000)
@@ -16,9 +32,11 @@ export default function Preloader() {
 
   if (done) return null
 
+  const exitTransform = getExitTransform(direction)
+
   return (
     <>
-      {/* ── Centred content ────────────────────────────────────────── */}
+      {/* Centred content */}
       <motion.div
         style={{
           position: 'fixed', inset: 0,
@@ -30,7 +48,6 @@ export default function Preloader() {
         animate={{ opacity: exiting ? 0 : 1 }}
         transition={{ duration: 0.25, ease: 'easeIn' }}
       >
-        {/* Z icon — springs in with slight overshoot */}
         <motion.div
           initial={{ scale: 0.4, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -51,7 +68,6 @@ export default function Preloader() {
           </svg>
         </motion.div>
 
-        {/* Wordmark — rises up */}
         <motion.p
           initial={{ y: 22, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -69,7 +85,6 @@ export default function Preloader() {
           Zikel <span style={{ color: '#F94D00' }}>Solutions</span>
         </motion.p>
 
-        {/* Accent line — sweeps left → right */}
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
@@ -84,36 +99,18 @@ export default function Preloader() {
         />
       </motion.div>
 
-      {/* ── Curtain: two clipped halves of the same image — zero seam ─ */}
-      {/* Both divs render the IDENTICAL background (same size + position).
-          clipPath restricts each to its half. Since rendering is identical,
-          the two halves always match perfectly at the centre. */}
-      <div style={{ position: 'fixed', inset: 0, zIndex: 10000000, overflow: 'hidden' }}>
-        {/* Left half → slides left */}
-        <motion.div
-          style={{
-            position: 'absolute', inset: 0,
-            backgroundImage: 'url(/assets/img/home-1/hero/hero-bg.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            clipPath: 'inset(0 50% 0 0)',
-          }}
-          animate={{ x: exiting ? '-50%' : 0 }}
-          transition={{ duration: 0.65, ease: CURTAIN, delay: exiting ? 0.15 : 0 }}
-        />
-        {/* Right half → slides right */}
-        <motion.div
-          style={{
-            position: 'absolute', inset: 0,
-            backgroundImage: 'url(/assets/img/home-1/hero/hero-bg.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            clipPath: 'inset(0 0 0 50%)',
-          }}
-          animate={{ x: exiting ? '50%' : 0 }}
-          transition={{ duration: 0.65, ease: CURTAIN, delay: exiting ? 0.15 : 0 }}
-        />
-      </div>
+      {/* Curtain — single panel, random swipe direction */}
+      <motion.div
+        style={{
+          position: 'fixed', inset: 0,
+          zIndex: 10000000,
+          backgroundImage: 'url(/assets/img/home-1/hero/hero-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+        animate={exiting ? exitTransform : { x: 0, y: 0 }}
+        transition={{ duration: 0.7, ease: EASE_OUT, delay: exiting ? 0.15 : 0 }}
+      />
     </>
   )
 }

@@ -170,3 +170,35 @@ body {
   background: var(--theme);
   border-radius: 2px;
 }
+
+/* ── Mobile: hide desktop nav, top bar, phone number ───────────────────── */
+@media (max-width: 1199px) {
+  .mean__menu-wrapper { display: none !important; }
+  .header-top-section { display: none !important; }
+}
+
+/* ── Hero h1: responsive sizing ────────────────────────────────────────── */
+.hero-content h1 {
+  font-size: clamp(28px, 6vw, 60px) !important;
+  line-height: 1.15 !important;
+}
+
+/* ── Accordion: smaller text on mobile + centred +/- icons ─────────────── */
+@media (max-width: 767px) {
+  .faq-items .accordion .accordion-item h2 button,
+  .faq-items-3 .accordion .accordion-item h2 button {
+    font-size: 15px !important;
+    padding-right: 50px !important;
+  }
+}
+
+.faq-items .accordion .accordion-button::before,
+.faq-wrapper-3 .faq-items-3 .accordion .accordion-button::before {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* ── Custom cursor: hide on touch/mobile devices ───────────────────────── */
+@media (hover: none), (pointer: coarse) {
+  .mouseCursor { display: none !important; }
+}

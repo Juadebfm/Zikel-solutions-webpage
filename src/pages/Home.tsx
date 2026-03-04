@@ -100,7 +100,7 @@ export default function Home() {
           <div className="row g-4">
             <div className="col-lg-6">
               <div className="hero-content">
-                <h1 style={{ fontSize: '60px' }}>
+                <h1>
                   Intelligent Guidance for Smarter, More Accountable Teams.
                 </h1>
                 <p>
