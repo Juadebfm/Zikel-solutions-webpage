@@ -78,22 +78,20 @@ export default function Header() {
           <>
             <motion.div
               className="offcanvas__overlay"
-              style={{ visibility: 'visible' }}
+              style={{ visibility: 'visible', zIndex: 9999998 }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSidebarOpen(false)}
             />
             <motion.div
-              className="fix-area"
-              initial={{ x: '-100%' }}
+              className="offcanvas__info"
+              initial={{ x: '100%' }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
+              exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              style={{ display: 'block' }}
             >
-              <div className="offcanvas__info">
-                <div className="offcanvas__wrapper">
+              <div className="offcanvas__wrapper">
                   <div className="offcanvas__content">
                     <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                       <div className="offcanvas__logo">
@@ -170,7 +168,6 @@ export default function Header() {
                     </div>
                   </div>
                 </div>
-              </div>
             </motion.div>
           </>
         )}
