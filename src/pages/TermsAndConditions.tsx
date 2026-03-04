@@ -58,7 +58,6 @@ export default function TermsAndConditions() {
                   include but are not limited to:
                 </p>
                 <ul>
-                  <li>Digital Filing Cabinet for Children's Homes — including Reg 44 &amp; Reg 45 evidence pack generation, safeguarding chronology auto-build, risk escalation alerts, and PACE-informed reflective recording prompts.</li>
                   <li>AI Staff Guidance &amp; Monitoring System — including pattern mapping, RI dashboards, and supervision triggers.</li>
                   <li>Training &amp; Professional Development Intelligence.</li>
                   <li>Healthcare Workflow Support Software.</li>

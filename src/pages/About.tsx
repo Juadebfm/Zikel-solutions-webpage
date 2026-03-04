@@ -112,8 +112,8 @@ export default function About() {
                         <p>
                           Our work began inside the walls of children's homes—where documentation,
                           supervision, staff training, and child safeguarding are mission-critical
-                          yet often overwhelming. We created a digital filing cabinet designed to
-                          bring order, accuracy, and accessibility to everyday record-keeping.
+                          yet often overwhelming. We built intelligent software designed to
+                          bring order, accuracy, and accountability to everyday operations.
                         </p>
                       </FadeSection>
                       <FadeSection delay={0.3}>

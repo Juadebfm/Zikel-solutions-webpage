@@ -9,7 +9,6 @@ const QUICK_LINKS = [
 ]
 
 const SERVICE_LINKS = [
-  { to: '/services/digital-filing-cabinet', label: 'Digital Filing Cabinet' },
   { to: '/services/ai-staff-guidance', label: 'AI Staff Guidance' },
   { to: '/services/healthcare-workflow', label: 'Healthcare Workflow' },
   { to: '/services/training-intelligence', label: 'Training Intelligence' },

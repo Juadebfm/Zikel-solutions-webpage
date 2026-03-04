@@ -11,7 +11,6 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsAndConditions from './pages/TermsAndConditions'
 import BookDemo from './pages/BookDemo'
 import AiStaffGuidance from './pages/services/AiStaffGuidance'
-import DigitalFilingCabinet from './pages/services/DigitalFilingCabinet'
 import HealthcareWorkflow from './pages/services/HealthcareWorkflow'
 import TrainingIntelligence from './pages/services/TrainingIntelligence'
 
@@ -27,7 +26,6 @@ export default function App() {
           <Route path="consultation" element={<Consultation />} />
           <Route path="faq" element={<Faq />} />
           <Route path="services/ai-staff-guidance" element={<AiStaffGuidance />} />
-          <Route path="services/digital-filing-cabinet" element={<DigitalFilingCabinet />} />
           <Route path="services/healthcare-workflow" element={<HealthcareWorkflow />} />
           <Route path="services/training-intelligence" element={<TrainingIntelligence />} />
           <Route path="book-demo" element={<BookDemo />} />

@@ -14,25 +14,6 @@ interface ServiceCard {
 
 const SERVICE_CARDS: ServiceCard[] = [
   {
-    icon: '/assets/img/home-1/icon/02.svg',
-    title: "Digital Filing Cabinet (Children's Homes)",
-    to: '/services/digital-filing-cabinet',
-    description:
-      "Our flagship software transforms documentation and child record-keeping into a secure, structured, and easy-to-manage digital system.",
-    listLabel: 'Key Features:',
-    listItems: [
-      'Child case files',
-      'Staff logs',
-      'Health, education & daily recording',
-      'Incident reporting',
-      'Easy retrieval & compliance-ready export',
-      'Secure role-based access',
-    ],
-    outro:
-      "Improves accuracy, accountability, and compliance in children's homes. Take control of documentation with a secure, compliant system designed specifically for children's homes.",
-    ctaLabel: 'Explore Digital Filing Cabinet',
-  },
-  {
     icon: '/assets/img/home-1/icon/01.svg',
     title: 'AI-Powered Staff Guidance System',
     to: '/services/ai-staff-guidance',

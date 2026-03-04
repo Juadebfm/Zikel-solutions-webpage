@@ -14,7 +14,6 @@ const INDUSTRIES = [
     icon: '/assets/img/home-1/icon/01.svg',
     title: "Children's Homes & Social Care",
     items: [
-      'Digital filing cabinet',
       'Staff guidance engine',
       'Training recommendations',
       'Safeguarding alerts & compliance support',
