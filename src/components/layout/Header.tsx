@@ -224,17 +224,23 @@ export default function Header() {
                     style={{
                       background: 'none',
                       border: 'none',
-                      padding: '8px',
+                      padding: '12px',
                       cursor: 'pointer',
                       display: 'flex',
                       flexDirection: 'column',
                       gap: '5px',
                       marginLeft: '12px',
+                      position: 'relative',
+                      zIndex: 100,
+                      minWidth: '44px',
+                      minHeight: '44px',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                     }}
                   >
-                    <span style={{ width: '24px', height: '2px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
-                    <span style={{ width: '18px', height: '2px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
-                    <span style={{ width: '24px', height: '2px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
+                    <span style={{ width: '24px', height: '2.5px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
+                    <span style={{ width: '18px', height: '2.5px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
+                    <span style={{ width: '24px', height: '2.5px', background: isSticky ? '#1a1a2b' : '#fff', borderRadius: '2px', transition: 'background 0.3s' }} />
                   </button>
                 </div>
               </div>

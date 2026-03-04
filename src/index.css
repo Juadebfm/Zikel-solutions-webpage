@@ -171,10 +171,13 @@ body {
   border-radius: 2px;
 }
 
-/* ── Mobile: hide desktop nav, top bar, phone number ───────────────────── */
+/* ── Mobile: hide desktop nav, top bar ──────────────────────────────────── */
 @media (max-width: 1199px) {
   .mean__menu-wrapper { display: none !important; }
   .header-top-section { display: none !important; }
+  /* Ensure header stretches full width so hamburger is reachable */
+  .header-main { width: 100%; }
+  .header-main .header-right { flex-shrink: 0; }
 }
 
 /* ── Hero h1: responsive sizing ────────────────────────────────────────── */
