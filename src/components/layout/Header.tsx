@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import WaitlistModal from '../ui/WaitlistModal'
+import { APP_LOGIN_URL, APP_REGISTER_URL } from '../../constants/links'
 
 export default function Header() {
   const { pathname } = useLocation()
   const isHomePage = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [waitlistOpen, setWaitlistOpen] = useState(false)
 
   // Transparent header only on home page hero; all other pages start sticky
   const isSticky = !isHomePage || scrolled
@@ -123,14 +122,15 @@ export default function Header() {
                     </ul>
                   </nav>
 
-                  {/* Join Waitlist CTA */}
-                  <button
+                  {/* Get Started CTA */}
+                  <a
+                    href={APP_REGISTER_URL}
                     className="theme-btn"
                     style={{ width: '100%', justifyContent: 'center', fontSize: '15px', marginBottom: '28px' }}
-                    onClick={() => { setSidebarOpen(false); setWaitlistOpen(true) }}
+                    onClick={() => setSidebarOpen(false)}
                   >
-                    Join Waitlist <i className="fa-solid fa-arrow-up-right"></i>
-                  </button>
+                    Get Started <i className="fa-solid fa-arrow-up-right"></i>
+                  </a>
 
                   {/* Contact info */}
                   <div className="offcanvas__contact">
@@ -203,17 +203,18 @@ export default function Header() {
               </div>
               <div className="header-right d-flex justify-content-end align-items-center">
                 <div className="header-btn d-flex align-items-center">
-                  <h6 className="d-none d-xl-block" style={{ margin: 0 }}>
-                    <i className="fa-regular fa-phone-volume"></i>
-                    <a href="tel:+2348032819367">+234 803 281 9367</a>
-                  </h6>
-                  <button
-                    onClick={() => setWaitlistOpen(true)}
-                    className="theme-btn d-none d-xl-inline-flex"
-                    style={{ padding: '10px 22px', fontSize: '14px', marginLeft: '16px' }}
-                  >
-                    Join Waitlist
-                  </button>
+                  <div className="header-desktop-cta-group d-none d-xl-flex">
+                    <a href={APP_LOGIN_URL} className="header-login-btn">
+                      Login
+                    </a>
+                    <a
+                      href={APP_REGISTER_URL}
+                      className="theme-btn"
+                      style={{ padding: '10px 22px', fontSize: '14px' }}
+                    >
+                      Get Started
+                    </a>
+                  </div>
                   <button
                     className="d-xl-none"
                     onClick={() => setSidebarOpen(true)}
@@ -245,8 +246,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-
-      <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
     </>
   )
 }

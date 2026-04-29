@@ -1,6 +1,5 @@
-import { useState, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import WaitlistModal from '../components/ui/WaitlistModal'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
@@ -8,6 +7,7 @@ import FadeSection from '../components/ui/FadeSection'
 import AnimatedText from '../components/ui/AnimatedText'
 import RevealImage from '../components/ui/RevealImage'
 import { FAQ_ITEMS } from './Faq'
+import { APP_REGISTER_URL } from '../constants/links'
 
 
 const INDUSTRIES = [
@@ -22,11 +22,11 @@ const INDUSTRIES = [
   },
   {
     icon: '/assets/img/home-1/icon/02.svg',
-    title: 'Corporate Organizations',
+    title: 'Care Groups & Home Leaders',
     items: [
-      'Workflow guidance',
-      'Staff development insights',
-      'Smart reminders and operational accountability',
+      'Multi-home oversight across Tasks and Daily Logs',
+      'Role-aware approvals, comments, and ownership tracking',
+      'Evidence-linked reporting for Reg 44 / Reg 45 readiness',
     ],
   },
   {
@@ -81,14 +81,42 @@ const DIFFERENCE_ITEMS = [
 ]
 
 export default function Home() {
-  const [waitlistOpen, setWaitlistOpen] = useState(false)
   const [diffOpen, setDiffOpen] = useState<number | null>(0)
   const [faqOpen, setFaqOpen] = useState<number | null>(0)
+  const [showScrollCue, setShowScrollCue] = useState(true)
   const serviceSwiperRef = useRef<SwiperType | null>(null)
   const testimonialSwiperRef = useRef<SwiperType | null>(null)
 
   const toggleDiff = (i: number) => setDiffOpen(diffOpen === i ? null : i)
   const toggleFaq = (i: number) => setFaqOpen(faqOpen === i ? null : i)
+
+  useEffect(() => {
+    const updateScrollCueVisibility = () => {
+      setShowScrollCue(window.scrollY < 40)
+    }
+
+    updateScrollCueVisibility()
+    window.addEventListener('scroll', updateScrollCueVisibility, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollCueVisibility)
+    }
+  }, [])
+
+  const handleScrollCueClick = () => {
+    const nextSection = document.getElementById('home-about')
+
+    if (!nextSection) {
+      return
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    nextSection.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block: 'start',
+    })
+  }
 
   return (
     <>
@@ -110,9 +138,9 @@ export default function Home() {
                   teams, built to strengthen accountability, staff performance, and care standards.
                 </p>
                 <div className="hero-btn">
-                  <button className="theme-btn" onClick={() => setWaitlistOpen(true)}>
-                    Join Waitlist <i className="fa-solid fa-arrow-up-right"></i>
-                  </button>
+                  <a href={APP_REGISTER_URL} className="theme-btn">
+                    Get Started <i className="fa-solid fa-arrow-up-right"></i>
+                  </a>
                   <Link to="/services" className="theme-btn style-2">
                     Explore Our Services <i className="fa-solid fa-arrow-up-right"></i>
                   </Link>
@@ -126,11 +154,24 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {showScrollCue && (
+          <button
+            type="button"
+            className="hero-scroll-cue"
+            onClick={handleScrollCueClick}
+            aria-label="Scroll to the next section"
+          >
+            <span className="hero-scroll-cue__mouse" aria-hidden="true">
+              <span className="hero-scroll-cue__wheel" />
+            </span>
+            <span className="hero-scroll-cue__text">Scroll</span>
+          </button>
+        )}
       </section>
 
 
       {/* About Section */}
-      <section className="about-section section-padding fix">
+      <section id="home-about" className="about-section section-padding fix">
         <div className="container">
           <div className="section-title">
             <FadeSection>
@@ -475,7 +516,6 @@ export default function Home() {
         </div>
       </section>
     </main>
-    <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
     </>
   )
 }

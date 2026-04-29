@@ -18,7 +18,3 @@ async function post(url: string, body: object): Promise<{ ok: boolean; message: 
 export function submitBookDemo(payload: object) {
   return post(`${BASE}/book-demo`, payload)
 }
-
-export function submitWaitlist(payload: object) {
-  return post(`${BASE}/join-waitlist`, payload)
-}

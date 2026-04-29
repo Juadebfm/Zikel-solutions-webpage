@@ -11,8 +11,7 @@ body {
   display: block;
   min-width: 320px;
   /* Match the original site body background so sections without their own
-     background colour render correctly. The preloader panels cover any
-     brief flash before React mounts. */
+     background colour render correctly during initial paint. */
   background-color: #EFEDE5;
 }
 
@@ -54,6 +53,34 @@ body {
   width: 100%;
   z-index: 9998;
   margin-bottom: 0 !important;
+}
+
+@media (min-width: 1200px) {
+  .header-top-section .container-fluid,
+  .header-1 .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .hero-1 {
+    min-height: 100vh;
+    padding-bottom: 140px;
+  }
+
+  .hero-1 .hero-image {
+    max-width: none;
+    margin-left: 24px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: max(1320px, calc(100vw - 216px)) !important;
+  }
+
+  .custom-container {
+    max-width: max(1323px, calc(100vw - 216px)) !important;
+  }
 }
 
 /* ── Top bar: WCAG AA contrast fix ──────────────────────────────────────────
@@ -195,19 +222,182 @@ body {
   border-radius: 2px;
 }
 
+.header-desktop-cta-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-desktop-cta-group > a {
+  width: 148px;
+}
+
+.header-login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.header-login-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: var(--white);
+}
+
+.header-login-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.sticky.header-1 .header-login-btn {
+  background: rgba(11, 13, 23, 0.04);
+  border-color: rgba(11, 13, 23, 0.14);
+  color: var(--header);
+}
+
+.sticky.header-1 .header-login-btn:hover {
+  background: rgba(11, 13, 23, 0.08);
+  border-color: rgba(11, 13, 23, 0.2);
+  color: var(--header);
+}
+
+.sticky.header-1 .header-login-btn:focus-visible {
+  outline-color: rgba(11, 13, 23, 0.8);
+}
+
 /* ── Mobile: hide desktop nav, top bar ──────────────────────────────────── */
 @media (max-width: 1199px) {
   .mean__menu-wrapper { display: none !important; }
   .header-top-section { display: none !important; }
   /* Ensure header stretches full width so hamburger is reachable */
   .header-main { width: 100%; }
+  .header-1 .header-main {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
   .header-main .header-right { flex-shrink: 0; }
 }
 
 /* ── Hero h1: responsive sizing ────────────────────────────────────────── */
 .hero-content h1 {
-  font-size: clamp(28px, 6vw, 60px) !important;
+  font-size: clamp(40px, 6vw, 60px) !important;
   line-height: 1.15 !important;
+}
+
+.hero-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: max(56px, calc(100% - 100vh + 72px));
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.82);
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  animation: hero-scroll-cue-float 2.4s ease-in-out infinite;
+}
+
+.hero-scroll-cue:hover {
+  color: var(--white);
+  opacity: 1;
+}
+
+.hero-scroll-cue:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 8px;
+  border-radius: 999px;
+}
+
+.hero-scroll-cue__mouse {
+  width: 28px;
+  height: 46px;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.hero-scroll-cue__wheel {
+  width: 4px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--theme);
+  animation: hero-scroll-cue-wheel 1.8s ease-in-out infinite;
+}
+
+.hero-scroll-cue__text {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes hero-scroll-cue-float {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+@keyframes hero-scroll-cue-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-1 .hero-content .hero-btn {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-1 .hero-content .hero-btn .theme-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-scroll-cue {
+    bottom: max(36px, calc(100% - 100vh + 48px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-cue,
+  .hero-scroll-cue__wheel {
+    animation: none !important;
+  }
 }
 
 /* ── Accordion: smaller text on mobile + centred +/- icons ─────────────── */

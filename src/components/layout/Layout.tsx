@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import CustomCursor from '../ui/CustomCursor'
-import Preloader from '../ui/Preloader'
 import BackToTop from '../ui/BackToTop'
 
 export default function Layout() {
@@ -16,7 +15,6 @@ export default function Layout() {
 
   return (
     <>
-      <Preloader />
       <CustomCursor />
       <Header />
       <main>
