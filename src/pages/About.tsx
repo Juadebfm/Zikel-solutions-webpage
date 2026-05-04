@@ -7,7 +7,7 @@ import FadeSection from '../components/ui/FadeSection'
 import AnimatedText from '../components/ui/AnimatedText'
 import RevealImage from '../components/ui/RevealImage'
 import CounterUp from '../components/ui/CounterUp'
-import { FAQ_ITEMS } from './Faq'
+import { FAQ_ITEMS } from '../constants/faqItems'
 
 const TESTIMONIALS = [
   {

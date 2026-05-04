@@ -15,7 +15,16 @@ export default function Header() {
   const isHomePage = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarPathname, setSidebarPathname] = useState(pathname)
   const isAuthed = useIsAuthed()
+  const isSidebarVisible = sidebarOpen && sidebarPathname === pathname
+
+  const openSidebar = () => {
+    setSidebarPathname(pathname)
+    setSidebarOpen(true)
+  }
+
+  const closeSidebar = () => setSidebarOpen(false)
 
   // Transparent header only on home page hero; all other pages start sticky
   const isSticky = !isHomePage || scrolled
@@ -27,16 +36,11 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close sidebar on route change (e.g. browser back/forward)
-  useEffect(() => {
-    setSidebarOpen(false)
-  }, [pathname])
-
   // Prevent body scroll when sidebar open
   useEffect(() => {
-    document.body.style.overflowY = sidebarOpen ? 'hidden' : ''
+    document.body.style.overflowY = isSidebarVisible ? 'hidden' : ''
     return () => { document.body.style.overflowY = '' }
-  }, [sidebarOpen])
+  }, [isSidebarVisible])
 
   const navLinks = [
     { to: '/', label: 'Home', end: true },
@@ -78,7 +82,7 @@ export default function Header() {
 
       {/* Offcanvas Sidebar */}
       <AnimatePresence>
-        {sidebarOpen && (
+        {isSidebarVisible && (
           <>
             <motion.div
               className="offcanvas__overlay"
@@ -86,7 +90,7 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.45 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSidebarOpen(false)}
+              onClick={closeSidebar}
             />
             <motion.div
               className="offcanvas__info"
@@ -100,12 +104,12 @@ export default function Header() {
                   {/* Logo + close */}
                   <div className="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
                     <div className="offcanvas__logo">
-                      <Link to="/" onClick={() => setSidebarOpen(false)}>
+                      <Link to="/" onClick={closeSidebar}>
                         <img src="/assets/img/logo/black-logo.svg" alt="Zikel Solutions" />
                       </Link>
                     </div>
                     <div className="offcanvas__close">
-                      <button onClick={() => setSidebarOpen(false)} aria-label="Close menu">
+                      <button onClick={closeSidebar} aria-label="Close menu">
                         <i className="fas fa-times"></i>
                       </button>
                     </div>
@@ -119,7 +123,7 @@ export default function Header() {
                           <NavLink
                             to={link.to}
                             end={link.end}
-                            onClick={() => setSidebarOpen(false)}
+                            onClick={closeSidebar}
                             className={({ isActive }) => isActive ? 'active' : ''}
                             style={{ display: 'block', fontSize: '19px', fontWeight: 600, padding: '15px 4px', color: 'var(--header)', textDecoration: 'none' }}
                           >
@@ -137,7 +141,7 @@ export default function Header() {
                         href={APP_DASHBOARD_URL}
                         className="theme-btn"
                         style={{ width: '100%', justifyContent: 'center', fontSize: '15px', marginBottom: '12px' }}
-                        onClick={() => setSidebarOpen(false)}
+                        onClick={closeSidebar}
                       >
                         Go to Dashboard <i className="fa-solid fa-arrow-up-right"></i>
                       </a>
@@ -154,7 +158,7 @@ export default function Header() {
                           padding: '10px',
                           marginBottom: '28px',
                         }}
-                        onClick={() => setSidebarOpen(false)}
+                        onClick={closeSidebar}
                       >
                         <i className="fa-solid fa-arrow-right-from-bracket"></i>
                         Logout
@@ -165,7 +169,7 @@ export default function Header() {
                       href={APP_REGISTER_URL}
                       className="theme-btn"
                       style={{ width: '100%', justifyContent: 'center', fontSize: '15px', marginBottom: '28px' }}
-                      onClick={() => setSidebarOpen(false)}
+                      onClick={closeSidebar}
                     >
                       Get Started <i className="fa-solid fa-arrow-up-right"></i>
                     </a>
@@ -262,7 +266,7 @@ export default function Header() {
                   </div>
                   <button
                     className="d-xl-none"
-                    onClick={() => setSidebarOpen(true)}
+                    onClick={openSidebar}
                     aria-label="Open menu"
                     style={{
                       background: 'none',

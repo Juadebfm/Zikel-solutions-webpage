@@ -39,7 +39,7 @@ export default function Consultation() {
   const onSubmit = async (data: ConsultationFormData) => {
     setStatus('loading')
     try {
-      const response = await fetch('http://localhost/sender/send-email.php', {
+      const response = await fetch('https://api.zikelsolutions.com/sender/send-email.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

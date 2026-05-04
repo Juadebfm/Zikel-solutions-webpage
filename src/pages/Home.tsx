@@ -6,7 +6,7 @@ import type { Swiper as SwiperType } from 'swiper'
 import FadeSection from '../components/ui/FadeSection'
 import AnimatedText from '../components/ui/AnimatedText'
 import RevealImage from '../components/ui/RevealImage'
-import { FAQ_ITEMS } from './Faq'
+import { FAQ_ITEMS } from '../constants/faqItems'
 import { APP_DASHBOARD_URL, APP_REGISTER_URL } from '../constants/links'
 import { useIsAuthed } from '../hooks/useIsAuthed'
 

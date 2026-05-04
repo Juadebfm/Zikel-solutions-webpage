@@ -44,7 +44,7 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     setStatus('loading')
     try {
-      const response = await fetch('https://zikel-solutions-be.fly.dev/api/v1/public/contact-us', {
+      const response = await fetch('https://api.zikelsolutions.com/api/v1/public/contact-us', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...data, source: 'Contact Us Page' }),

@@ -1,6 +1,6 @@
 export type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
 
-const BASE = 'https://zikel-solutions-be.fly.dev/api/v1/public'
+const BASE = 'https://api.zikelsolutions.com/api/v1/public'
 
 async function post(url: string, body: object): Promise<{ ok: boolean; message: string }> {
   const res = await fetch(url, {
