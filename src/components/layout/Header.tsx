@@ -6,6 +6,7 @@ import {
   APP_LOGIN_URL,
   APP_LOGOUT_URL,
   APP_REGISTER_URL,
+  SOCIAL_LINKS,
 } from '../../constants/links'
 import { useIsAuthed } from '../../hooks/useIsAuthed'
 import UserMenu from '../ui/UserMenu'
@@ -70,10 +71,17 @@ export default function Header() {
             </div>
             <div className="header-right">
               <div className="social-icon">
-                <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i className="fa-brands fa-twitter"></i></a>
-                <a href="#"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i className="fa-brands fa-instagram"></i></a>
+                {SOCIAL_LINKS.map(({ label, href, icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                  >
+                    <i className={`fa-brands ${icon}`}></i>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -197,10 +205,17 @@ export default function Header() {
                       </li>
                     </ul>
                     <div className="social-icon d-flex align-items-center" style={{ marginTop: '16px' }}>
-                      <a href="#"><i className="fab fa-facebook-f"></i></a>
-                      <a href="#"><i className="fab fa-twitter"></i></a>
-                      <a href="#"><i className="fab fa-youtube"></i></a>
-                      <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                      {SOCIAL_LINKS.map(({ label, href, icon }) => (
+                        <a
+                          key={label}
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={label}
+                        >
+                          <i className={`fa-brands ${icon}`}></i>
+                        </a>
+                      ))}
                     </div>
                   </div>
                 </div>

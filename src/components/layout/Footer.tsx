@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SOCIAL_LINKS } from '../../constants/links'
 
 const QUICK_LINKS = [
   { to: '/', label: 'Home' },
@@ -38,15 +39,13 @@ export default function Footer() {
               Intelligent guidance software for children's homes, healthcare institutions, and corporate teams, built to strengthen accountability and care standards.
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
-              {[
-                { icon: 'fa-facebook-f', href: '#' },
-                { icon: 'fa-twitter', href: '#' },
-                { icon: 'fa-linkedin-in', href: '#' },
-                { icon: 'fa-instagram', href: '#' },
-              ].map(({ icon, href }) => (
+              {SOCIAL_LINKS.map(({ label, icon, href }) => (
                 <a
-                  key={icon}
+                  key={label}
                   href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
                   style={{
                     width: '38px',
                     height: '38px',
