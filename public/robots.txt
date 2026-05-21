@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://www.zikelsolutions.com/sitemap.xml

@@ -1,0 +1,36 @@
+# Zikel Solutions
+
+Zikel Solutions is a technology company focused on practical, ethical AI adoption, workflow
+improvement, and support systems for healthcare teams, educators, and operational teams.
+
+Website: https://www.zikelsolutions.com/
+App: https://app.zikelsolutions.com/
+Contact: contact@zikelsolutions.com
+
+## What We Do
+
+- AI staff guidance and support systems
+- Healthcare workflow tools
+- Training intelligence and learning support
+- Consultation and implementation support
+- Digital workflow improvement for organizations
+
+## Key Pages
+
+- https://www.zikelsolutions.com/ : Homepage and company overview
+- https://www.zikelsolutions.com/about : Company mission, vision, and values
+- https://www.zikelsolutions.com/services : Service overview
+- https://www.zikelsolutions.com/services/ai-staff-guidance : AI Staff Guidance & Support System
+- https://www.zikelsolutions.com/services/healthcare-workflow : Healthcare workflow solutions
+- https://www.zikelsolutions.com/services/training-intelligence : Training Intelligence service
+- https://www.zikelsolutions.com/faq : Frequently asked questions
+- https://www.zikelsolutions.com/contact : Contact page
+- https://www.zikelsolutions.com/book-demo : Demo booking page
+- https://www.zikelsolutions.com/privacy-policy : Privacy policy
+- https://www.zikelsolutions.com/terms-and-conditions : Terms and conditions
+
+## Guidance For Agents
+
+- Prefer the page-specific URLs above over guessing service descriptions.
+- Use the homepage and service pages for public-facing business information.
+- Use the app domain only for product access flows, login, registration, and authenticated actions.
