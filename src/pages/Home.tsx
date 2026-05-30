@@ -7,8 +7,7 @@ import FadeSection from '../components/ui/FadeSection'
 import AnimatedText from '../components/ui/AnimatedText'
 import RevealImage from '../components/ui/RevealImage'
 import { FAQ_ITEMS } from '../constants/faqItems'
-import { APP_DASHBOARD_URL, APP_REGISTER_URL } from '../constants/links'
-import { useIsAuthed } from '../hooks/useIsAuthed'
+import { APP_REGISTER_URL } from '../constants/links'
 
 
 const INDUSTRIES = [
@@ -87,7 +86,6 @@ export default function Home() {
   const [showScrollCue, setShowScrollCue] = useState(true)
   const serviceSwiperRef = useRef<SwiperType | null>(null)
   const testimonialSwiperRef = useRef<SwiperType | null>(null)
-  const isAuthed = useIsAuthed()
 
   const toggleDiff = (i: number) => setDiffOpen(diffOpen === i ? null : i)
   const toggleFaq = (i: number) => setFaqOpen(faqOpen === i ? null : i)
@@ -140,8 +138,8 @@ export default function Home() {
                   teams, built to strengthen accountability, staff performance, and care standards.
                 </p>
                 <div className="hero-btn">
-                  <a href={isAuthed ? APP_DASHBOARD_URL : APP_REGISTER_URL} className="theme-btn">
-                    {isAuthed ? 'Go to Dashboard' : 'Get Started'} <i className="fa-solid fa-arrow-up-right"></i>
+                  <a href={APP_REGISTER_URL} className="theme-btn">
+                    Get Started <i className="fa-solid fa-arrow-up-right"></i>
                   </a>
                   <Link to="/services" className="theme-btn style-2">
                     Explore Our Services <i className="fa-solid fa-arrow-up-right"></i>

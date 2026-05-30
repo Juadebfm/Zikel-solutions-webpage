@@ -2,14 +2,10 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  APP_DASHBOARD_URL,
   APP_LOGIN_URL,
-  APP_LOGOUT_URL,
   APP_REGISTER_URL,
   SOCIAL_LINKS,
 } from '../../constants/links'
-import { useIsAuthed } from '../../hooks/useIsAuthed'
-import UserMenu from '../ui/UserMenu'
 
 export default function Header() {
   const { pathname } = useLocation()
@@ -17,7 +13,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [sidebarPathname, setSidebarPathname] = useState(pathname)
-  const isAuthed = useIsAuthed()
   const isSidebarVisible = sidebarOpen && sidebarPathname === pathname
 
   const openSidebar = () => {
@@ -142,46 +137,15 @@ export default function Header() {
                     </ul>
                   </nav>
 
-                  {/* Auth-aware CTA */}
-                  {isAuthed ? (
-                    <>
-                      <a
-                        href={APP_DASHBOARD_URL}
-                        className="theme-btn"
-                        style={{ width: '100%', justifyContent: 'center', fontSize: '15px', marginBottom: '12px' }}
-                        onClick={closeSidebar}
-                      >
-                        Go to Dashboard <i className="fa-solid fa-arrow-up-right"></i>
-                      </a>
-                      <a
-                        href={APP_LOGOUT_URL}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '8px',
-                          fontSize: '14px',
-                          color: 'var(--text)',
-                          textDecoration: 'none',
-                          padding: '10px',
-                          marginBottom: '28px',
-                        }}
-                        onClick={closeSidebar}
-                      >
-                        <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        Logout
-                      </a>
-                    </>
-                  ) : (
-                    <a
-                      href={APP_REGISTER_URL}
-                      className="theme-btn"
-                      style={{ width: '100%', justifyContent: 'center', fontSize: '15px', marginBottom: '28px' }}
-                      onClick={closeSidebar}
-                    >
-                      Get Started <i className="fa-solid fa-arrow-up-right"></i>
-                    </a>
-                  )}
+                  {/* Get Started CTA */}
+                  <a
+                    href={APP_REGISTER_URL}
+                    className="theme-btn"
+                    style={{ width: '100%', justifyContent: 'center', fontSize: '15px', marginBottom: '28px' }}
+                    onClick={closeSidebar}
+                  >
+                    Get Started <i className="fa-solid fa-arrow-up-right"></i>
+                  </a>
 
                   {/* Contact info */}
                   <div className="offcanvas__contact">
@@ -262,22 +226,16 @@ export default function Header() {
               <div className="header-right d-flex justify-content-end align-items-center">
                 <div className="header-btn d-flex align-items-center">
                   <div className="header-desktop-cta-group d-none d-xl-flex align-items-center">
-                    {isAuthed ? (
-                      <UserMenu variant={isSticky ? 'dark' : 'light'} />
-                    ) : (
-                      <>
-                        <a href={APP_LOGIN_URL} className="header-login-btn">
-                          Login
-                        </a>
-                        <a
-                          href={APP_REGISTER_URL}
-                          className="theme-btn"
-                          style={{ padding: '10px 22px', fontSize: '14px' }}
-                        >
-                          Get Started
-                        </a>
-                      </>
-                    )}
+                    <a href={APP_LOGIN_URL} className="header-login-btn">
+                      Login
+                    </a>
+                    <a
+                      href={APP_REGISTER_URL}
+                      className="theme-btn"
+                      style={{ padding: '10px 22px', fontSize: '14px' }}
+                    >
+                      Get Started
+                    </a>
                   </div>
                   <button
                     className="d-xl-none"
