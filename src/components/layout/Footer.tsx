@@ -13,6 +13,12 @@ const SERVICE_LINKS = [
   { to: '/services/ai-staff-guidance', label: 'AI Staff Guidance' },
   { to: '/services/healthcare-workflow', label: 'Healthcare Workflow' },
   { to: '/services/training-intelligence', label: 'Training Intelligence' },
+  { to: '/services/consulting', label: 'Consulting' },
+  { to: '/services/corporate-strategy', label: 'Corporate Strategy' },
+  { to: '/services/corporate-management', label: 'General Corporate Management' },
+  { to: '/services/supervision-management', label: 'Supervision & Management' },
+  { to: '/services/executive-recruitment', label: 'Executive Selection & Recruitment' },
+  { to: '/services/tax-consultancy', label: 'Tax Consultancy & Advisory' },
 ]
 
 export default function Footer() {
@@ -129,7 +135,7 @@ export default function Footer() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
                 { icon: 'fa-envelope', text: 'contact@zikelsolutions.com', href: 'mailto:contact@zikelsolutions.com' },
-                { icon: 'fa-phone', text: '+234 803 281 9367', href: 'tel:+2348032819367' },
+                { icon: 'fa-phone', text: '+44 7436129008', href: 'tel:+447436129008' },
                 { icon: 'fa-clock', text: 'Mon–Fri, 09:00 AM – 06:00 PM' },
               ].map(({ icon, text, href }) => (
                 <li key={icon} style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '18px' }}>

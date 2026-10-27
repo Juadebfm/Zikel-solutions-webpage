@@ -55,7 +55,7 @@ export default function Header() {
               <ul className="list">
                 <li>
                   <i className="fa-solid fa-phone"></i>
-                  <a href="tel:+2348032819367">+234 803 281 9367</a>
+                  <a href="tel:+447436129008">+44 7436129008</a>
                 </li>
                 <li>।</li>
                 <li>

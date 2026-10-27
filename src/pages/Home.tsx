@@ -11,16 +11,7 @@ import { APP_REGISTER_URL } from '../constants/links'
 
 
 const INDUSTRIES = [
-  {
-    icon: '/assets/img/home-1/icon/01.svg',
-    title: "Children's Homes & Social Care",
-    items: [
-      'Staff guidance engine',
-      'Training recommendations',
-      'Safeguarding alerts & compliance support',
-    ],
-  },
-  {
+    {
     icon: '/assets/img/home-1/icon/02.svg',
     title: 'Care Groups & Home Leaders',
     items: [
@@ -36,6 +27,33 @@ const INDUSTRIES = [
       'AI-driven staff support',
       'Documentation accuracy prompts',
       'Performance monitoring & capacity building',
+    ],
+  },
+  {
+    icon: '/assets/img/home-1/icon/01.svg',
+    title: "Children's Homes & Social Care",
+    items: [
+      'Staff guidance engine',
+      'Training recommendations',
+      'Safeguarding alerts & compliance support',
+    ],
+  },
+  {
+    icon: '/assets/img/home-1/icon/04.svg',
+    title: 'Corporate Organisations & SMEs',
+    items: [
+      'Consulting, corporate strategy & business transformation',
+      'Corporate management, governance & compliance systems',
+      'Tax consultancy, advisory & audit support',
+    ],
+  },
+  {
+    icon: '/assets/img/home-1/icon/03.svg',
+    title: 'Executives & Boards',
+    items: [
+      'Executive selection, recruitment & onboarding',
+      'Supervision, KPI tracking & performance monitoring',
+      'Strategic planning & board-ready reporting',
     ],
   },
 ]

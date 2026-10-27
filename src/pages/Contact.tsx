@@ -21,7 +21,7 @@ const INFO_CARDS = [
     title: 'Contact Us',
     body: (
       <p>
-        <a className="d-block" href="tel:+2348032819367">Mobile: +234 803 281 9367</a>
+        <a className="d-block" href="tel:+447436129008">Mobile: +44 7436129008</a>
         <a href="mailto:contact@zikelsolutions.com">contact@zikelsolutions.com</a>
       </p>
     ),

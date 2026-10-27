@@ -2,9 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const SERVICES = [
-{ label: 'AI Staff Guidance & Support System', icon: 'fa-robot', value: 'ai_staff_guidance' },
+  { label: 'AI Staff Guidance & Support System', icon: 'fa-robot', value: 'ai_staff_guidance' },
   { label: 'Training & Professional Development Intelligence', icon: 'fa-graduation-cap', value: 'training_development' },
   { label: 'Healthcare Workflow Support Software', icon: 'fa-hospital', value: 'healthcare_workflow' },
+  { label: 'Consulting', icon: 'fa-lightbulb', value: 'consulting' },
+  { label: 'Corporate Strategy', icon: 'fa-chess', value: 'corporate_strategy' },
+  { label: 'General Corporate Management', icon: 'fa-building', value: 'corporate_management' },
+  { label: 'Supervision & Management', icon: 'fa-clipboard-check', value: 'supervision_management' },
+  { label: 'Executive Selection & Recruitment', icon: 'fa-user-tie', value: 'executive_recruitment' },
+  { label: 'Tax Consultancy & Advisory', icon: 'fa-calculator', value: 'tax_consultancy' },
   { label: 'General Enquiry / Not Sure Yet', icon: 'fa-circle-question', value: 'general_enquiry' },
 ]
 
