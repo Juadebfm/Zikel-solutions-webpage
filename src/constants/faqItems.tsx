@@ -4,47 +4,56 @@ interface FaqItem { q: string; a: ReactNode }
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    q: 'What types of healthcare software do you build?',
-    a: 'We develop a wide range of healthcare solutions, including EMR/EHR systems, AI-driven decision support tools, telemedicine platforms, workflow automation software, patient portals, medical inventory systems, and custom applications tailored to clinical needs.',
+    q: 'What services does Zikel Solutions offer?',
+    a: 'We offer consulting, corporate strategy, general corporate management, supervision and management, executive selection and recruitment, and tax consultancy and advisory.',
   },
   {
-    q: 'Do you create fully custom solutions or use pre-built templates?',
-    a: 'We specialize in fully custom solutions built around your operations, workflow, and compliance requirements. All systems are designed to match your exact specifications, not generic one-size-fits-all templates.',
+    q: 'Who do you work with?',
+    a: 'Corporate organisations, SMEs, executives and boards, care groups, children’s homes, and healthcare providers.',
   },
   {
-    q: 'How do you ensure data security and compliance?',
-    a: (
-      <>
-        <p>Our development process is compliance-first. We implement:</p>
-        <ul className="ms-3 text-start" style={{ listStyleType: 'disc' }}>
-          <li className="ps-2">Encryption (at rest and in transit)</li>
-          <li className="ps-2">Role-based access control</li>
-          <li className="ps-2">Audit trails</li>
-          <li className="ps-2">Secure cloud architecture</li>
-        </ul>
-        <p>We also follow HIPAA, NDPR, GDPR, and ISO 27001 best practices based on your region and regulatory needs.</p>
-      </>
-    ),
+    q: 'Do you tailor your services to each client?',
+    a: 'Yes. Every engagement starts with understanding your organisation and goals, and the scope is designed around them.',
   },
   {
-    q: 'Can your software integrate with our existing hospital systems?',
-    a: 'Yes. We perform integrations using industry standards such as HL7, FHIR, REST APIs, and other interoperability protocols. Whether you use an existing EMR, billing system, or scheduling platform, we can connect and synchronize your data securely.',
+    q: 'How do we get started?',
+    a: 'Contact us or book a call. We’ll discuss your goals, recommend a scope, and agree next steps.',
   },
+
   {
-    q: 'Do you offer AI and automation features?',
-    a: (
-      <>
-        <p>Absolutely. We provide:</p>
-        <ul className="ms-3 text-start" style={{ listStyleType: 'disc' }}>
-          <li className="ps-2">Symptom analysis and clinical decision support</li>
-          <li className="ps-2">Predictive analytics</li>
-          <li className="ps-2">Intelligent triage</li>
-          <li className="ps-2">Automated documentation (speech-to-text, structured notes)</li>
-          <li className="ps-2">Workflow automation for administrative tasks</li>
-        </ul>
-      </>
-    ),
+    q: 'How long does an engagement take?',
+    a: 'It depends on scope. Typical consulting projects run from a few weeks to several months, and some services, such as supervision or advisory, can run on an ongoing basis.',
   },
+
+  {
+    q: 'How do you protect confidential information?',
+    a: 'We treat client information as confidential and limit access to the people who need it.',
+  },
+
+  {
+    q: 'Do you provide support after delivery?',
+    a: 'Yes. We offer follow-up support after implementation and ongoing advisory support where needed.',
+  },
+
+  {
+    q: 'Do you also offer software?',
+    a: 'Yes. For care and healthcare providers, we offer supporting tools for documentation, supervision, and compliance reporting. Contact us to find out more.',
+  },
+  // {
+  //   q: 'Do you offer AI and automation features?',
+  //   a: (
+  //     <>
+  //       <p>Absolutely. We provide:</p>
+  //       <ul className="ms-3 text-start" style={{ listStyleType: 'disc' }}>
+  //         <li className="ps-2">Symptom analysis and clinical decision support</li>
+  //         <li className="ps-2">Predictive analytics</li>
+  //         <li className="ps-2">Intelligent triage</li>
+  //         <li className="ps-2">Automated documentation (speech-to-text, structured notes)</li>
+  //         <li className="ps-2">Workflow automation for administrative tasks</li>
+  //       </ul>
+  //     </>
+  //   ),
+  // },
   {
     q: 'How long does it take to build a healthcare solution?',
     a: (
@@ -79,34 +88,18 @@ export const FAQ_ITEMS: FaqItem[] = [
     ),
   },
   {
-    q: 'Do you work with startups or only hospitals?',
+    q: 'How do you ensure data security and compliance?',
     a: (
       <>
-        <p>We work with:</p>
-        <ol className="text-start">
-          <li className="ps-1">Hospitals</li>
-          <li className="ps-1">Clinics</li>
-          <li className="ps-1">Diagnostic centers</li>
-          <li className="ps-1">HealthTech startups</li>
-          <li className="ps-1">Telemedicine providers</li>
-          <li className="ps-1">NGOs and research organizations</li>
-        </ol>
-        <p>Our services scale to fit any size or stage.</p>
+        <p>Our development process is compliance-first. We implement:</p>
+        <ul className="ms-3 text-start" style={{ listStyleType: 'disc' }}>
+          <li className="ps-2">Encryption (at rest and in transit)</li>
+          <li className="ps-2">Role-based access control</li>
+          <li className="ps-2">Audit trails</li>
+          <li className="ps-2">Secure cloud architecture</li>
+        </ul>
+        <p>We also follow HIPAA, NDPR, GDPR, and ISO 27001 best practices based on your region and regulatory needs.</p>
       </>
     ),
-  },
-  {
-    q: 'How can we get started?',
-    a: (
-      <>
-        <p>Simply contact us through the form or join our waitlist. We will:</p>
-        <ol className="text-start">
-          <li className="ps-1">Discuss your goals</li>
-          <li className="ps-1">Review your current workflows</li>
-          <li className="ps-1">Create a plan, timeline, and budget</li>
-          <li className="ps-1">Begin the development process</li>
-        </ol>
-      </>
-    ),
-  },
+  }
 ]

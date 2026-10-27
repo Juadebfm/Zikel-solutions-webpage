@@ -31,22 +31,14 @@ const TESTIMONIALS = [
 ]
 
 const DIFFERENCE_ITEMS = [
-  {
-    title: 'Purpose-Built for Real-World Challenges',
-    body: "We understand the daily pressures faced by children's homes, healthcare institutions, and corporate teams. Our solutions address real operational gaps, not theoretical ones.",
-  },
-  {
-    title: 'AI With Integrity',
-    body: 'Our AI empowers staff. It does not replace human judgment. It highlights training gaps, supervision needs, and workflow inconsistencies, supporting staff growth.',
-  },
-  {
-    title: 'User-Centered Design',
-    body: 'Every feature is built to be intuitive, secure, and accessible to teams at all levels.',
-  },
-  {
-    title: 'Scalable Technology',
-    body: 'From small teams to enterprise organizations, our systems are built to grow with your needs.',
-  },
+  { title: 'Practical, Results-Driven Advice',
+    body: 'We focus on recommendations you can act on. Every engagement is shaped around your goals, constraints, and context, not a generic template.' },
+  { title: 'Integrity and Confidentiality',
+    body: 'We handle sensitive matters, from executive searches to governance and tax questions, with discretion and professionalism.' },
+  { title: 'Experience Across Sectors',
+    body: 'We support corporate organisations, SMEs, care providers, and healthcare institutions, bringing lessons from one sector to the next.' },
+  { title: 'End-to-End Support',
+    body: 'From diagnosis and strategy through to implementation and follow-up, one team stays with you.' },
 ]
 
 export default function About() {
@@ -104,37 +96,30 @@ export default function About() {
                     <FadeSection>
                       <div className="count-item">
                         <h2><CounterUp target={3} /><sup>+</sup></h2>
-                        <h5>Personalization at seems <br /> ultimate scale.</h5>
+                        <h5>Years of Experience <br /> Supporting Organisations</h5>
                       </div>
                     </FadeSection>
                     <div className="content-box">
                       <FadeSection delay={0.2}>
                         <p>
-                          Our work began inside the walls of children's homes, where documentation,
-                          supervision, staff training, and child safeguarding are mission-critical
-                          yet often overwhelming. We built intelligent software designed to
-                          bring order, accuracy, and accountability to everyday operations.
+                          Zikel Solutions started inside children's homes, where documentation, supervision, staff
+                          development, and safeguarding are critical and often overwhelming. We built practical tools
+                          that brought order, accuracy, and accountability to everyday operations.
                         </p>
                       </FadeSection>
                       <FadeSection delay={0.3}>
                         <p>
-                          As we worked closely with teams, supervisors, and caregivers, one
-                          reality became clear:
+                            Working closely with teams, supervisors, and leaders, one thing became clear:
                         </p>
                         <p>
-                          <strong>
-                            Documentation alone is not enough; staff also need guidance, prompts,
-                            and support.
-                          </strong>
+                          <strong>Good systems are not enough. Organisations also need strong management, clear strategy, and the right people.</strong>
                         </p>
                       </FadeSection>
                       <FadeSection delay={0.4}>
                         <p>
-                          This inspired our next milestone:<br />
-                          <strong>
-                            An AI-powered system that watches organizational patterns and
-                            intelligently supports staff in real time.
-                          </strong>
+                          That led us to build what we offer today: consulting, corporate strategy, corporate
+                          management, supervision, executive recruitment, and tax advisory, delivered to organisations
+                          across sectors, and supported by software for care and healthcare providers.
                         </p>
                         <Link to="/contact" className="theme-btn">
                           Know more us <i className="fa-solid fa-arrow-up-right"></i>
@@ -170,7 +155,7 @@ export default function About() {
                 <FadeSection>
                   <div className="count-item">
                     <h2><CounterUp target={3} /><sup>+</sup></h2>
-                    <h5>Years of Experience of <br /> AI Industries</h5>
+                    <h5>Years of Experience of <br /> Supporting Organisations</h5>
                   </div>
                 </FadeSection>
               </div>
@@ -184,22 +169,22 @@ export default function About() {
                   <div className="content">
                     <FadeSection delay={0.2}>
                       <h3 className="mb-2 text-white">Mission</h3>
-                      <p className="mb-2">To build intelligent software that:</p>
-                      <ul className="text-start text-white mb-4" style={{ listStyleType: 'decimal', marginLeft: '20px' }}>
-                        <li className="ps-3">Promotes accountability</li>
-                        <li className="ps-3">Strengthens staff capacity</li>
-                        <li className="ps-3">Enhances decision-making</li>
-                        <li className="ps-3">Supports compliance and governance</li>
-                        <li className="ps-3">Improves outcomes for children, patients, and people</li>
+                      <p className="mb-2">To help organisations perform better by providing advice, management support, and tools that:</p>
+                      <ul className="text-start text-white mb-4" style={{ listStyleType: 'decimal', marginLeft: 20 }}>
+                        <li className="ps-3">Promote accountability</li>
+                        <li className="ps-3">Strengthen leadership and staff capacity</li>
+                        <li className="ps-3">Improve decision-making</li>
+                        <li className="ps-3">Support compliance and governance</li>
+                        <li className="ps-3">Deliver better outcomes for the people organisations serve</li>
                       </ul>
                     </FadeSection>
                     <FadeSection delay={0.4}>
                       <div className="content-box bg-white text-dark py-3 px-2">
                         <h3 className="mb-2 border-bottom pb-2 ps-3">Vision</h3>
                         <p className="text-dark py-1 px-3 mb-2">
-                          To empower organizations with smart, compassionate, and reliable
-                          technology that enhances human performance and improves care,
-                          governance, and operational effectiveness.
+                          To be a trusted partner to organisations that want to lead well, govern responsibly, and grow
+                          sustainably, with practical expertise and technology that supports human performance and
+                          improves care, governance, and operational effectiveness.
                         </p>
                       </div>
                     </FadeSection>
@@ -212,7 +197,7 @@ export default function About() {
       </section>
 
       {/* Testimonials */}
-      <section className="testimonial-section section-padding fix">
+      {/* <section className="testimonial-section section-padding fix">
         <div className="array-button">
           <button className="array-prev" onClick={() => swiperRef.current?.slidePrev()}>
             <i className="fa-solid fa-chevron-left"></i>
@@ -263,7 +248,7 @@ export default function About() {
             <div className="about-testimonial-dot"></div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* What Makes Us Different */}
       <section className="faq-section fix section-padding">

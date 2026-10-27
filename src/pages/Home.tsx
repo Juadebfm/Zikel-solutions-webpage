@@ -79,23 +79,34 @@ const TESTIMONIALS = [
   },
 ]
 
+// const DIFFERENCE_ITEMS = [
+//   {
+//     title: 'Purpose-Built for Real-World Challenges',
+//     body: "We understand the daily pressures faced by children's homes, healthcare institutions, and corporate teams. Our solutions address real operational gaps, not theoretical ones.",
+//   },
+//   {
+//     title: 'AI With Integrity',
+//     body: 'Our AI empowers staff. It does not replace human judgment. It highlights training gaps, supervision needs, and workflow inconsistencies, supporting staff growth.',
+//   },
+//   {
+//     title: 'User-Centered Design',
+//     body: 'Every feature is built to be intuitive, secure, and accessible to teams at all levels.',
+//   },
+//   {
+//     title: 'Scalable Technology',
+//     body: 'From small teams to enterprise organizations, our systems are built to grow with your needs.',
+//   },
+// ]
+
 const DIFFERENCE_ITEMS = [
-  {
-    title: 'Purpose-Built for Real-World Challenges',
-    body: "We understand the daily pressures faced by children's homes, healthcare institutions, and corporate teams. Our solutions address real operational gaps, not theoretical ones.",
-  },
-  {
-    title: 'AI With Integrity',
-    body: 'Our AI empowers staff. It does not replace human judgment. It highlights training gaps, supervision needs, and workflow inconsistencies, supporting staff growth.',
-  },
-  {
-    title: 'User-Centered Design',
-    body: 'Every feature is built to be intuitive, secure, and accessible to teams at all levels.',
-  },
-  {
-    title: 'Scalable Technology',
-    body: 'From small teams to enterprise organizations, our systems are built to grow with your needs.',
-  },
+  { title: 'Practical, Results-Driven Advice',
+    body: 'We focus on recommendations you can act on. Every engagement is shaped around your goals, constraints, and context, not a generic template.' },
+  { title: 'Integrity and Confidentiality',
+    body: 'We handle sensitive matters, from executive searches to governance and tax questions, with discretion and professionalism.' },
+  { title: 'Experience Across Sectors',
+    body: 'We support corporate organisations, SMEs, care providers, and healthcare institutions, bringing lessons from one sector to the next.' },
+  { title: 'End-to-End Support',
+    body: 'From diagnosis and strategy through to implementation and follow-up, one team stays with you.' },
 ]
 
 export default function Home() {
@@ -155,7 +166,7 @@ export default function Home() {
                 <p>
                   {/* AI-enabled software for children's homes, healthcare institutions, and corporate
                   teams, built to strengthen accountability, staff performance, and care standards. */}
-                  Consulting, corporate strategy, governance, recruitment and tax advisory, supported by 
+                  Consulting, corporate strategy, governance, and recruitment supported by 
                   purpose-built software for children's homes, healthcare providers, and corporate teams.
 
                 </p>
@@ -171,7 +182,7 @@ export default function Home() {
             </div>
             <div className="col-lg-6">
               <div className="hero-image">
-                <img src="/assets/img/home-1/hero/hero-1.png" alt="Zikel Solutions" />
+                <img src="/assets/img/home-1/corporate-strategy.png" alt="Zikel Solutions" />
               </div>
             </div>
           </div>
@@ -208,14 +219,14 @@ export default function Home() {
           </div>
           <div className="about-wrapper">
             <div className="row g-4">
-              <div className="col-lg-4">
+              <div className="col-lg-5">
                 <div className="about-image">
                   <RevealImage>
-                    <img src="/assets/img/home-1/about.png" alt="About Zikel Solutions" />
+                    <img src="/assets/img/home-1/who-we-are.png" alt="About Zikel Solutions" />
                   </RevealImage>
                 </div>
               </div>
-              <div className="col-lg-8">
+              <div className="col-lg-7">
                 <div className="about-content">
                   <div className="about-item">
                     <div className="about-count-spacer" aria-hidden="true" />
@@ -328,15 +339,14 @@ export default function Home() {
               <FadeSection>
                 <span className="sub-title">
                   <img src="/assets/img/home-1/hero/setting.png" alt="" />
-                  How
+                  Our Approach
                 </span>
               </FadeSection>
-              <FadeSection delay={0.1}><h2>How Our AI Works</h2></FadeSection>
+              <FadeSection delay={0.1}><h2>How We Work</h2></FadeSection>
             </div>
             <FadeSection delay={0.2}>
               <p>
-                Our AI tracks staff activity footprints (daily logs, documentation patterns, workflow
-                behavior) and then intelligently:
+                Every engagement follows a clear, structured process so you always know where you stand.
               </p>
             </FadeSection>
           </div>
@@ -348,22 +358,17 @@ export default function Home() {
                     <img src="/assets/img/home-3/icon/02.svg" alt="" />
                   </div>
                   <div className="content">
-                    <p className="mb-3">
-                      Our AI tracks staff activity footprints (daily logs, documentation patterns,
-                      incident records, and workflow behaviour) and then intelligently:
-                    </p>
-                    <ul className="text-start content" style={{ listStyleType: 'decimal', marginLeft: '20px', marginBottom: '20px' }}>
-                      <li className="ps-3">Generates one-click Reg 44 &amp; Reg 45 evidence packs</li>
-                      <li className="ps-3">Auto-builds safeguarding chronologies in real time</li>
-                      <li className="ps-3">Sends risk escalation alerts to supervisors and Responsible Individuals</li>
-                      <li className="ps-3">Maps patterns across incidents to enable early intervention</li>
-                      <li className="ps-3">Provides an internal monitoring dashboard for RIs</li>
-                      <li className="ps-3">Guides staff with PACE-informed reflective recording prompts</li>
-                      <li className="ps-3">Recommends targeted training and supervision sessions</li>
+                    <ul className="text-start content" style={{ listStyleType: 'decimal', marginLeft: 20, marginBottom: 20 }}>
+                      <li className="ps-3"><strong>Understand:</strong> we learn your organisation, goals, and constraints</li>
+                      <li className="ps-3"><strong>Diagnose:</strong> we assess the current state and identify gaps and risks</li>
+                      <li className="ps-3"><strong>Design:</strong> we build a customised plan with clear priorities and KPIs</li>
+                      <li className="ps-3"><strong>Implement:</strong> we support adoption and execution alongside your team</li>
+                      <li className="ps-3"><strong>Measure:</strong> we track results and refine the approach over time</li>
                     </ul>
+
                     <p>
-                      This is not just software.<br />
-                      <strong>It is organisational intelligence, built for the children's homes sector, grounded in therapeutic values.</strong>
+                      Practical advice, delivered with discipline. <br />
+                      <strong>Strategy and management support that your team can act on.</strong>
                     </p>
                   </div>
                 </div>
@@ -374,7 +379,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="testimonial-section section-padding fix">
+      {/* <section className="testimonial-section section-padding fix">
         <div className="array-button">
           <button className="array-prev" onClick={() => testimonialSwiperRef.current?.slidePrev()}>
             <i className="fa-solid fa-chevron-left"></i>
@@ -431,7 +436,7 @@ export default function Home() {
             <div className="home-testimonial-dot"></div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* What Makes Us Different */}
       <section className="faq-section fix section-padding">

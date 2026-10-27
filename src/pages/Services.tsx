@@ -51,25 +51,6 @@ const SERVICE_CARDS: ServiceCard[] = [
     ctaLabel: 'Explore Supervision & Management',
   },
   {
-    icon: '/assets/img/home-1/icon/01.svg',
-    title: 'AI-Powered Staff Guidance System',
-    to: '/services/ai-staff-guidance',
-    description:
-      'A smart AI engine designed to track staff activity patterns and provide real-time guidance.',
-    listLabel: 'AI Capabilities:',
-    listItems: [
-      'Prompts staff when documentation is incomplete',
-      'Suggests timely supervision sessions',
-      'Recommends training based on performance gaps',
-      'Identifies workflow inconsistencies',
-      'Helps supervisors monitor team wellbeing',
-      'Enhances staff development and consistency',
-    ],
-    outro:
-      'A more capable, confident, and supported workforce. Empower your team with real-time AI prompts, performance tracking, and automated supervision support.',
-    ctaLabel: 'See AI Staff Guidance in Action',
-  },
-  {
     icon: '/assets/img/home-1/icon/03.svg',
     title: 'Training & Professional Development Intelligence',
     to: '/services/training-intelligence',
@@ -85,23 +66,6 @@ const SERVICE_CARDS: ServiceCard[] = [
     outro:
       'This turns professional development into a data-driven process. Turn staff development into a smart, data-driven process tailored to every individual\'s strengths and gaps.',
     ctaLabel: 'Discover Training Intelligence',
-  },
-  {
-    icon: '/assets/img/home-1/icon/04.svg',
-    title: 'Healthcare Workflow Support Software',
-    to: '/services/healthcare-workflow',
-    description: 'For clinics, hospitals, and care centers.',
-    listLabel: 'Features Include:',
-    listItems: [
-      'Documentation prompts',
-      'Staff accountability tracking',
-      'AI-enabled supervision support',
-      'Task prioritization',
-      'Shift-based performance insights',
-    ],
-    outro:
-      'This enhances patient care quality through structured staff guidance. Streamline clinical workflows and strengthen patient care with AI-enabled staff accountability and documentation support.',
-    ctaLabel: 'Explore Healthcare Software',
   },
   {
     icon: '/assets/img/home-1/icon/01.svg',
@@ -121,6 +85,42 @@ const SERVICE_CARDS: ServiceCard[] = [
     outro:
       'Clear insights and actionable strategies, tailored to your organisation and backed by support after implementation.',
     ctaLabel: 'Explore Consulting',
+  },
+  {
+    icon: '/assets/img/home-1/icon/01.svg',
+    title: 'AI-Powered Staff Guidance System',
+    to: '/services/ai-staff-guidance',
+    description:
+      'A smart AI engine designed to track staff activity patterns and provide real-time guidance.',
+    listLabel: 'AI Capabilities:',
+    listItems: [
+      'Prompts staff when documentation is incomplete',
+      'Suggests timely supervision sessions',
+      'Recommends training based on performance gaps',
+      'Identifies workflow inconsistencies',
+      'Helps supervisors monitor team wellbeing',
+      'Enhances staff development and consistency',
+    ],
+    outro:
+      'A more capable, confident, and supported workforce. Empower your team with real-time AI prompts, performance tracking, and automated supervision support.',
+    ctaLabel: 'See AI Staff Guidance in Action',
+  },
+  {
+    icon: '/assets/img/home-1/icon/04.svg',
+    title: 'Healthcare Workflow Support Software',
+    to: '/services/healthcare-workflow',
+    description: 'For clinics, hospitals, and care centers.',
+    listLabel: 'Features Include:',
+    listItems: [
+      'Documentation prompts',
+      'Staff accountability tracking',
+      'AI-enabled supervision support',
+      'Task prioritization',
+      'Shift-based performance insights',
+    ],
+    outro:
+      'This enhances patient care quality through structured staff guidance. Streamline clinical workflows and strengthen patient care with AI-enabled staff accountability and documentation support.',
+    ctaLabel: 'Explore Healthcare Software',
   },
   {
     icon: '/assets/img/home-1/icon/03.svg',
