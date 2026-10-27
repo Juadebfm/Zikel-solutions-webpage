@@ -149,11 +149,15 @@ export default function Home() {
             <div className="col-lg-6">
               <div className="hero-content">
                 <h1>
-                  Intelligent Guidance for Smarter, More Accountable Teams.
+                  Expert Advisory, Management and Technology for Organisations That Need to Perform.
+                  {/* Intelligent Guidance for Smarter, More Accountable Teams. */}
                 </h1>
                 <p>
-                  AI-enabled software for children's homes, healthcare institutions, and corporate
-                  teams, built to strengthen accountability, staff performance, and care standards.
+                  {/* AI-enabled software for children's homes, healthcare institutions, and corporate
+                  teams, built to strengthen accountability, staff performance, and care standards. */}
+                  Consulting, corporate strategy, governance, recruitment and tax advisory, supported by 
+                  purpose-built software for children's homes, healthcare providers, and corporate teams.
+
                 </p>
                 <div className="hero-btn">
                   <a href={APP_REGISTER_URL} className="theme-btn">
@@ -199,7 +203,7 @@ export default function Home() {
               </span>
             </FadeSection>
             <FadeSection delay={0.15}>
-              <h2>AI-Driven Healthcare Software. <br />Built for Your Workflow.</h2>
+              <h2>Practical Expertise. <br />Built Around Your Organisation.</h2>
             </FadeSection>
           </div>
           <div className="about-wrapper">
@@ -218,20 +222,21 @@ export default function Home() {
                     <div className="content-box">
                       <FadeSection delay={0.2}>
                         <p>
-                          We design purpose-driven software solutions that help organizations work
+                          {/* We design purpose-driven software solutions that help organizations work
                           smarter, faster, and more efficiently. Our journey began with a digital
                           filing cabinet built specifically for children's homes, simplifying
-                          record-keeping, compliance, and child safeguarding processes.
+                          record-keeping, compliance, and child safeguarding processes. */}
+                          We help organisations work smarter, stay compliant, and grow with confidence. Our team
+  delivers consulting, corporate strategy, management support, executive recruitment, and tax
+  advisory, shaped around your goals rather than a generic template.
                         </p>
                       </FadeSection>
                       <FadeSection delay={0.3}>
                         <p>
-                          Now, we're building the next evolution:<br />
-                          <strong>
-                            AI-driven platforms that guide staff actions, suggest training
-                            needs, and recommend timely supervision based on real-time staff
-                            activity patterns.
-                          </strong>
+                          Alongside our advisory work, we build purpose-driven software for the care and healthcare
+  sectors. It began with a digital filing cabinet for children's homes, and it now supports
+  staff guidance, training, and compliance.
+
                         </p>
                         <Link to="/about" className="theme-btn">
                           Know more us <i className="fa-solid fa-arrow-up-right"></i>
