@@ -10,15 +10,14 @@ const QUICK_LINKS = [
 ]
 
 const SERVICE_LINKS = [
-  { to: '/services/ai-staff-guidance', label: 'AI Staff Guidance' },
-  { to: '/services/healthcare-workflow', label: 'Healthcare Workflow' },
-  { to: '/services/training-intelligence', label: 'Training Intelligence' },
-  { to: '/services/consulting', label: 'Consulting' },
   { to: '/services/corporate-strategy', label: 'Corporate Strategy' },
   { to: '/services/corporate-management', label: 'General Corporate Management' },
   { to: '/services/supervision-management', label: 'Supervision & Management' },
   { to: '/services/executive-recruitment', label: 'Executive Selection & Recruitment' },
-  { to: '/services/tax-consultancy', label: 'Tax Consultancy & Advisory' },
+  { to: '/services/ai-staff-guidance', label: 'AI Staff Guidance' },
+  { to: '/services/healthcare-workflow', label: 'Healthcare Workflow' },
+  { to: '/services/training-intelligence', label: 'Training Intelligence' },
+  { to: '/services/consulting', label: 'Consulting' },
 ]
 
 export default function Footer() {

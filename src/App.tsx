@@ -13,7 +13,7 @@ import BookDemo from './pages/BookDemo'
 import AiStaffGuidance from './pages/services/AiStaffGuidance'
 import HealthcareWorkflow from './pages/services/HealthcareWorkflow'
 import TrainingIntelligence from './pages/services/TrainingIntelligence'
-import TaxConsultancy from "./pages/services/TaxConsultancy"
+// import TaxConsultancy from "./pages/services/TaxConsultancy"
 import ConsultingServices from './pages/services/ConsultingServices'
 import CorporateStrategy from './pages/services/CorporateStrategy'
 import CorporateManagement from './pages/services/CorporateManagement'
@@ -32,13 +32,13 @@ export default function App() {
           <Route path="consultation" element={<Consultation />} />
           <Route path="faq" element={<Faq />} />
           <Route path="services/ai-staff-guidance" element={<AiStaffGuidance />} />
-          <Route path="services/healthcare-workflow" element={<HealthcareWorkflow />} />
-          <Route path="services/training-intelligence" element={<TrainingIntelligence />} />
-          <Route path="services/tax-consultancy" element={<TaxConsultancy />} />
-          <Route path="/services/consulting" element={<ConsultingServices />} />
-          <Route path="/services/corporate-strategy" element={<CorporateStrategy />} />
           <Route path="/services/corporate-management" element={<CorporateManagement />} />
           <Route path="/services/supervision-management" element={<SupervisionManagement />} />
+          <Route path="services/healthcare-workflow" element={<HealthcareWorkflow />} />
+          <Route path="services/training-intelligence" element={<TrainingIntelligence />} />
+          {/* <Route path="services/tax-consultancy" element={<TaxConsultancy />} /> */}
+          <Route path="/services/consulting" element={<ConsultingServices />} />
+          <Route path="/services/corporate-strategy" element={<CorporateStrategy />} />
           <Route path="/services/executive-recruitment" element={<ExecutiveRecruitment />} />
           <Route path="book-demo" element={<BookDemo />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
