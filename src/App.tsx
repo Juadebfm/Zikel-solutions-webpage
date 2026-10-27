@@ -13,6 +13,12 @@ import BookDemo from './pages/BookDemo'
 import AiStaffGuidance from './pages/services/AiStaffGuidance'
 import HealthcareWorkflow from './pages/services/HealthcareWorkflow'
 import TrainingIntelligence from './pages/services/TrainingIntelligence'
+import TaxConsultancy from "./pages/services/TaxConsultancy"
+import ConsultingServices from './pages/services/ConsultingServices'
+import CorporateStrategy from './pages/services/CorporateStrategy'
+import CorporateManagement from './pages/services/CorporateManagement'
+import SupervisionManagement from './pages/services/SupervisionManagement'
+import ExecutiveRecruitment from './pages/services/ExecutiveRecruitment'
 
 export default function App() {
   return (
@@ -28,6 +34,12 @@ export default function App() {
           <Route path="services/ai-staff-guidance" element={<AiStaffGuidance />} />
           <Route path="services/healthcare-workflow" element={<HealthcareWorkflow />} />
           <Route path="services/training-intelligence" element={<TrainingIntelligence />} />
+          <Route path="services/tax-consultancy" element={<TaxConsultancy />} />
+          <Route path="/services/consulting" element={<ConsultingServices />} />
+          <Route path="/services/corporate-strategy" element={<CorporateStrategy />} />
+          <Route path="/services/corporate-management" element={<CorporateManagement />} />
+          <Route path="/services/supervision-management" element={<SupervisionManagement />} />
+          <Route path="/services/executive-recruitment" element={<ExecutiveRecruitment />} />
           <Route path="book-demo" element={<BookDemo />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-and-conditions" element={<TermsAndConditions />} />
