@@ -58,26 +58,26 @@ const INDUSTRIES = [
   },
 ]
 
-const TESTIMONIALS = [
-  {
-    quote:
-      '"We partnered with this team to modernize our patient management and clinical documentation systems. The improvement has been remarkable. Administrative workload reduced significantly, and our staff now completes tasks faster with fewer errors. Their understanding of healthcare workflows is outstanding, and their support has been consistently reliable."',
-    name: 'Amara Okoye, Chief Medical Administrator',
-    org: 'Reliance General Hospital',
-  },
-  {
-    quote:
-      '"We needed a custom telemedicine platform built with strong security and compliance standards. Not only did they deliver exactly what we envisioned, but they also ensured the system met all HIPAA and NDPR guidelines. Our patients love the convenience, and our clinicians appreciate the intuitive interface."',
-    name: 'Dr. Samuel Adeyemi, Founder',
-    org: 'MedLink Care Clinic',
-  },
-  {
-    quote:
-      '"As a startup, we required a development partner who could help us build a scalable AI-driven diagnostics tool. Their team exceeded every expectation: clear communication, deep technical knowledge, and a strategic approach to product design. Thanks to them, we launched on schedule and with immense confidence."',
-    name: 'Jane Roberts',
-    org: 'CEO, VitalCheck AI',
-  },
-]
+// const TESTIMONIALS = [
+//   {
+//     quote:
+//       '"We partnered with this team to modernize our patient management and clinical documentation systems. The improvement has been remarkable. Administrative workload reduced significantly, and our staff now completes tasks faster with fewer errors. Their understanding of healthcare workflows is outstanding, and their support has been consistently reliable."',
+//     name: 'Amara Okoye, Chief Medical Administrator',
+//     org: 'Reliance General Hospital',
+//   },
+//   {
+//     quote:
+//       '"We needed a custom telemedicine platform built with strong security and compliance standards. Not only did they deliver exactly what we envisioned, but they also ensured the system met all HIPAA and NDPR guidelines. Our patients love the convenience, and our clinicians appreciate the intuitive interface."',
+//     name: 'Dr. Samuel Adeyemi, Founder',
+//     org: 'MedLink Care Clinic',
+//   },
+//   {
+//     quote:
+//       '"As a startup, we required a development partner who could help us build a scalable AI-driven diagnostics tool. Their team exceeded every expectation: clear communication, deep technical knowledge, and a strategic approach to product design. Thanks to them, we launched on schedule and with immense confidence."',
+//     name: 'Jane Roberts',
+//     org: 'CEO, VitalCheck AI',
+//   },
+// ]
 
 // const DIFFERENCE_ITEMS = [
 //   {
@@ -114,7 +114,7 @@ export default function Home() {
   const [faqOpen, setFaqOpen] = useState<number | null>(0)
   const [showScrollCue, setShowScrollCue] = useState(true)
   const serviceSwiperRef = useRef<SwiperType | null>(null)
-  const testimonialSwiperRef = useRef<SwiperType | null>(null)
+  // const testimonialSwiperRef = useRef<SwiperType | null>(null)
 
   const toggleDiff = (i: number) => setDiffOpen(diffOpen === i ? null : i)
   const toggleFaq = (i: number) => setFaqOpen(faqOpen === i ? null : i)
